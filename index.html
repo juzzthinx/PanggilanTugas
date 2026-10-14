@@ -1,4 +1,3 @@
-
 <!DOCTYPE html><html lang="ms"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><title>PANGGILAN TUGAS</title>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 <style>
@@ -79,8 +78,8 @@ const leg=new T.Mesh(new T.CylinderGeometry(.3,.3,15,4),ink);leg.position.set(95
 {const N=170,cg=new T.ConeGeometry(2,7,6),tf=new T.InstancedMesh(cg,pap,N),to=new T.InstancedMesh(cg,oln,N),d=new T.Object3D();for(let i=0;i<N;i++){let x,z;do{x=rnd(-300,300);z=rnd(-300,300)}while(Math.hypot(x,z-130)<20||B.some(b=>x>b.x0-4&&x<b.x1+4&&z>b.z0-4&&z<b.z1+4));const s=rnd(.8,1.6);d.position.set(x,3.5*s,z);d.scale.setScalar(s);d.updateMatrix();tf.setMatrixAt(i,d.matrix);d.scale.set(s*1.12,s*1.05,s*1.12);d.updateMatrix();to.setMatrixAt(i,d.matrix)}S.add(tf,to)}
 // ---------- STICKMAN ----------
 function stick(){const g=new T.Group(),b=new T.Group();g.add(b);
-const L=(l,x,y)=>{const p=new T.Group(),m=new T.Mesh(new T.CylinderGeometry(.05,.05,l,5),ink);m.position.y=-l/2;p.add(m);p.position.set(x,y,0);b.add(p);return p};
-const t=new T.Mesh(new T.CylinderGeometry(.06,.06,.7,5),ink);t.position.y=1.15;b.add(t);
+const L=(l,x,y)=>{const p=new T.Group(),m=new T.Mesh(new T.CylinderGeometry(.065,.055,l,6),ink);m.position.y=-l/2;p.add(m);p.position.set(x,y,0);b.add(p);return p};
+const t=new T.Mesh(new T.CylinderGeometry(.12,.09,.72,8),pap);t.position.y=1.15;const tO=new T.Mesh(t.geometry,oln);tO.scale.setScalar(1.12);t.add(tO);b.add(t);const bl=new T.Mesh(new T.CylinderGeometry(.095,.095,.08,8),ink);bl.position.y=.82;b.add(bl);
 const h=new T.Mesh(new T.SphereGeometry(.17,10,8),pap);h.position.y=1.72;const ho=new T.Mesh(h.geometry,oln);ho.scale.setScalar(1.14);h.add(ho);b.add(h);
 const cap=new T.Mesh(new T.CylinderGeometry(.2,.22,.14,8),ink);cap.position.y=1.87;b.add(cap);
 const ll=L(.8,-.09,.8),rl=L(.8,.09,.8),la=L(.5,-.12,1.45),ra=L(.5,.12,1.45);la.rotation.x=ra.rotation.x=-1.4;
@@ -95,15 +94,18 @@ function aud(){AC=new(window.AudioContext||window.webkitAudioContext)();mg=AC.cr
 const n=AC.sampleRate*2,b=AC.createBuffer(2,n,AC.sampleRate);for(let c=0;c<2;c++){const d=b.getChannelData(c);for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/n,3)}
 rv=AC.createConvolver();rv.buffer=b;const rg=AC.createGain();rg.gain.value=.45;rv.connect(rg);rg.connect(mg);
 nb=AC.createBuffer(1,AC.sampleRate,AC.sampleRate);const d=nb.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;
-dl=AC.createDelay(1);dl.delayTime.value=.49;const fb=AC.createGain();fb.gain.value=.38;dl.connect(fb);fb.connect(dl);dl.connect(mg);music()}
+dl=AC.createDelay(1);dl.delayTime.value=.49;const fb=AC.createGain();fb.gain.value=.38;dl.connect(fb);fb.connect(dl);dl.connect(mg);music();amb()}
 const osc=(ty,f0,f1,t,d,v,dst,atk=.01)=>{const o=AC.createOscillator(),g=AC.createGain();o.type=ty;o.frequency.setValueAtTime(f0,t);if(f1)o.frequency.exponentialRampToValueAtTime(f1,t+d);g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(v,t+atk);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(dst||mg);o.start(t);o.stop(t+d+.05)};
 const nz=(d,f0,f1,v,ty,wet)=>{if(!AC)return;const t=AC.currentTime,s=AC.createBufferSource(),f=AC.createBiquadFilter(),g=AC.createGain();s.buffer=nb;f.type=ty;f.frequency.setValueAtTime(f0,t);f.frequency.exponentialRampToValueAtTime(f1,t+d);g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+d);s.connect(f);f.connect(g);g.connect(mg);if(wet)g.connect(rv);s.start(t,Math.random()*.5);s.stop(t+d)};
 const A=f=>(...a)=>{if(AC)f(AC.currentTime,...a)};
 const sShot=A(t=>{nz(.55,7000,200,1,'lowpass',1);nz(.06,9000,3000,.8,'highpass');osc('sine',90,30,t,.5,1.1)});
 const sBolt=A(t=>{osc('square',500,300,t,.04,.1);osc('square',380,250,t+.18,.05,.1);nz(.05,3000,1500,.2,'bandpass')});
 const sRl=()=>[0,.7,1.4,2.1].forEach(x=>setTimeout(sBolt,x*1000));
-const sE=d=>nz(.3,4000,300,Math.max(.08,.7/(1+d/25)),'lowpass',1);
-const sHit=A(t=>osc('triangle',1500,900,t,.08,.25)),sHurt=A(t=>osc('sawtooth',140,50,t,.25,.3)),sGeiger=()=>nz(.012,6000,6000,.12,'highpass');
+const sE=d=>{if(!AC)return;const t=AC.currentTime,v=Math.max(.15,.8/(1+d/40)),f=AC.createBiquadFilter(),g=AC.createGain();f.type='bandpass';f.frequency.value=1500;f.Q.value=1.2;g.gain.value=v;f.connect(g);g.connect(mg);nz(.07,3500,2500,.25*v,'bandpass');for(let i=0;i<5;i++)osc('sawtooth',rnd(110,220),rnd(90,200),t+.1+i*.09,.08,.14,f);setTimeout(()=>{osc('square',900,0,AC.currentTime,.05,.06*v);nz(.08,3000,2000,.2*v,'bandpass')},580)};
+function amb(){const w=AC.createBufferSource(),wf=AC.createBiquadFilter(),wg=AC.createGain();w.buffer=nb;w.loop=true;wf.type='lowpass';wf.frequency.value=450;wg.gain.value=.07;w.connect(wf);wf.connect(wg);wg.connect(mg);w.start();
+const lf=AC.createOscillator(),lg=AC.createGain();lf.frequency.value=.1;lg.gain.value=.04;lf.connect(lg);lg.connect(wg.gain);lf.start();
+(function l(){setTimeout(()=>{if(AC){const r=Math.random();if(r<.35)nz(2.4,300,40,.35,'lowpass',1);else if(r<.55)for(let i=0;i<18;i++)setTimeout(()=>osc('sine',58,40,AC.currentTime,.12,.1+Math.sin(i/18*3.14)*.1),i*190);else sE(150)}l()},rnd(4000,10000))})()}
+const sHit=A(t=>osc('triangle',1500,900,t,.08,.25)),sHurt=A(t=>{osc('sine',100,40,t,.25,.6);nz(.15,500,150,.3,'lowpass')}),sGeiger=()=>nz(.012,6000,6000,.12,'highpass');
 function music(){const sp=60/92/4,m=x=>440*Math.pow(2,(x-69)/12),ch=[[57,60,64],[53,57,60],[50,53,57],[52,56,59]];let n=0,nt=AC.currentTime+.1;
 const pf=AC.createBiquadFilter();pf.type='lowpass';pf.frequency.value=700;pf.Q.value=5;const pg=AC.createGain();pg.gain.value=.5;pf.connect(pg);pg.connect(mg);pg.connect(rv);
 const lf=AC.createOscillator(),lg=AC.createGain();lf.frequency.value=.08;lg.gain.value=450;lf.connect(lg);lg.connect(pf.frequency);lf.start();
