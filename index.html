@@ -230,7 +230,7 @@ const ln=new T.Line(new T.BufferGeometry().setFromPoints([new T.Vector3(),new T.
 mf.visible=true;setTimeout(()=>mf.visible=false,70);const fx=$('fx');fx.textContent=P.sc?'':'DOOM!';fx.style.transition='none';fx.style.opacity=1;setTimeout(()=>{fx.style.transition='opacity .4s';fx.style.opacity=0},90);setTimeout(()=>{sBolt();casing()},550);if(ST.vib&&navigator.vibrate)navigator.vibrate(30);
 enemies.forEach(e=>{if(Math.hypot(e.g.position.x-P.x,e.g.position.z-P.z)<150)e.al=1})}
 function reload(){if(!go||P.rl>0||P.mag>=5||P.res<=0)return;P.rl=2.6;setSc(0);sRl()}
-function dmg(e,d,p,head){e.hp-=d;e.al=1;blood(p,head?9:6);sHit();pop(head?'KRAK!!':'BAK!',p);const h=$('hm');h.style.opacity=1;setTimeout(()=>h.style.opacity=0,150);
+function dmg(e,d,p,head){e.hp-=d;e.al=1;blood(p,head?9:6);sHit();pop(e.hp<=0||head?'HABIS AH!!':['ADOI!','SAKIT DO!'][Math.random()*2|0],p);const h=$('hm');h.style.opacity=1;setTimeout(()=>h.style.opacity=0,150);
 if(e.hp<=0){enemies.splice(enemies.indexOf(e),1);corpses.push({e,t:0});e.gl.visible=false;tense=Math.max(tense,.6);P.k++;P.res+=2;msg(head?'TEMBAKAN KEPALA!':'MUSUH TUMBANG');setTimeout(()=>sE(70),500);if(P.k==25)setTimeout(()=>msg('MISI SELESAI — TERUSKAN BERTUGAS'),1700)}}
 function hurt(n){P.hp-=n;const hp=$('hp');hp.style.opacity=.25;setTimeout(()=>hp.style.opacity=1,150);tense=1;htFlash();if(ST.vib&&navigator.vibrate)navigator.vibrate(50);if(P.hp<=0&&!P.dead){P.dead=1;go=0;if(P.k>ST.best)ST.best=P.k;sav();$('os').textContent='Tumbang: '+P.k+' · Rekod: '+ST.best;$('over').style.display='flex';try{document.exitPointerLock&&document.exitPointerLock()}catch(e){}}}
 function enemy(e,dt,t,i){const q=e.g.position,dx=P.x-q.x,dz=P.z-q.z,d=Math.hypot(dx,dz)||1;
