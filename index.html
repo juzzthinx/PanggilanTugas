@@ -212,9 +212,10 @@ nb=AC.createBuffer(1,AC.sampleRate,AC.sampleRate);const d=nb.getChannelData(0);f
 dl=AC.createDelay(1);dl.delayTime.value=.49;const fb=AC.createGain();fb.gain.value=.38;dl.connect(fb);fb.connect(dl);dl.connect(mg);music();amb()}
 const osc=(ty,f0,f1,t,d,v,dst,atk=.01)=>{const o=AC.createOscillator(),g=AC.createGain();o.type=ty;o.frequency.setValueAtTime(f0,t);if(f1)o.frequency.exponentialRampToValueAtTime(f1,t+d);g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(v,t+atk);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(dst||mg);o.start(t);o.stop(t+d+.05)};
 const nz=(d,f0,f1,v,ty,wet)=>{if(!AC)return;const t=AC.currentTime,s=AC.createBufferSource(),f=AC.createBiquadFilter(),g=AC.createGain();s.buffer=nb;f.type=ty;f.frequency.setValueAtTime(f0,t);f.frequency.exponentialRampToValueAtTime(f1,t+d);g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+d);s.connect(f);f.connect(g);g.connect(mg);if(wet)g.connect(rv);s.start(t,Math.random()*.5);s.stop(t+d)};
+const nzAt=(t,d,f0,f1,v,ty,dst,wet)=>{if(!AC)return;const s=AC.createBufferSource(),f=AC.createBiquadFilter(),g=AC.createGain();s.buffer=nb;f.type=ty;f.frequency.setValueAtTime(f0,t);f.frequency.exponentialRampToValueAtTime(Math.max(40,f1),t+d);g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+d);s.connect(f);f.connect(g);g.connect(dst||mg);if(wet)g.connect(rv);s.start(t,Math.random()*.5);s.stop(t+d)};
 const A=f=>(...a)=>{if(AC)f(AC.currentTime,...a)};
-const sShot=A(t=>{nz(.05,5000,2500,.4,'bandpass');nz(.3,2600,120,.85,'lowpass',1);osc('sine',85,34,t,.42,1);osc('triangle',150,55,t,.1,.25);setTimeout(()=>nz(.5,1400,200,.22,'lowpass',1),320);setTimeout(()=>nz(.7,900,150,.12,'lowpass',1),700)});
-const sBolt=A(t=>{osc('square',500,300,t,.04,.1);osc('square',380,250,t+.18,.05,.1);nz(.05,3000,1500,.2,'bandpass')});
+const sShot=A(t=>{nzAt(t,.012,6000,2500,.45,'highpass');nzAt(t,.05,5000,1800,.3,'bandpass');nzAt(t,.2,3200,300,.8,'lowpass',0,1);osc('sine',82,30,t,.45,1);osc('triangle',140,50,t,.12,.25);osc('sine',42,28,t,.6,.55);[[.18,.3,2200],[.42,.2,1500],[.85,.11,1000],[1.4,.06,700]].forEach(([d,v,f])=>nzAt(t+d,.5,f,200,v,'lowpass',0,1))});
+const sBolt=A(t=>{nzAt(t,.03,4500,2500,.12,'bandpass');osc('triangle',700,420,t,.04,.05);nzAt(t+.06,.12,2000,900,.05,'bandpass');nzAt(t+.2,.03,3000,1500,.1,'bandpass');osc('triangle',320,180,t+.2,.05,.12);nzAt(t+.3,.02,4000,2500,.08,'bandpass')});
 const sRl=()=>[0,.7,1.4,2.1].forEach(x=>setTimeout(sBolt,x*1000));
 const sE=(d,pan)=>{if(!AC)return;const t=AC.currentTime,v=Math.max(.15,.8/(1+d/40)),f=AC.createBiquadFilter(),g=AC.createGain();f.type='bandpass';f.frequency.value=1500;f.Q.value=1.2;g.gain.value=v;f.connect(g);const pn=AC.createStereoPanner?AC.createStereoPanner():null;if(pn){pn.pan.value=Math.max(-1,Math.min(1,pan||0));g.connect(pn);pn.connect(mg)}else g.connect(mg);nz(.07,3500,2500,.25*v,'bandpass');for(let i=0;i<5;i++)osc('sawtooth',rnd(110,220),rnd(90,200),t+.1+i*.09,.08,.14,f);setTimeout(()=>{osc('square',900,0,AC.currentTime,.05,.06*v);nz(.08,3000,2000,.2*v,'bandpass')},580)};
 let hl=0;function heli(){if(!AC)return;const t=AC.currentTime,D=14,s=AC.createBufferSource(),f=AC.createBiquadFilter(),g=AC.createGain(),l=AC.createOscillator(),lg=AC.createGain(),e=AC.createGain(),pn=AC.createStereoPanner?AC.createStereoPanner():AC.createGain();
@@ -227,23 +228,33 @@ const o=AC.createOscillator(),og=AC.createGain();o.frequency.value=48;o.connect(
 function amb(){const w=AC.createBufferSource(),wf=AC.createBiquadFilter(),wg=AC.createGain();w.buffer=nb;w.loop=true;wf.type='lowpass';wf.frequency.value=450;wg.gain.value=.07;w.connect(wf);wf.connect(wg);wg.connect(mg);w.start();setTimeout(()=>{hl=1;heli();setTimeout(()=>hl=0,16000)},9000);
 const lf=AC.createOscillator(),lg=AC.createGain();lf.frequency.value=.1;lg.gain.value=.04;lf.connect(lg);lg.connect(wg.gain);lf.start();
 (function l(){setTimeout(()=>{if(AC){const r=Math.random();if(r<.35)osc('sine',48,32,AC.currentTime,5,.25,mg,2);else if(r<.6){if(!hl){hl=1;heli();setTimeout(()=>hl=0,16000)}}else sE(150,rnd(-1,1))}l()},rnd(9000,18000))})()}
-const sHit=A(t=>osc('triangle',1500,900,t,.08,.25)),sHurt=A(t=>{osc('sine',100,40,t,.25,.6);nz(.15,500,150,.3,'lowpass')}),sGun=A((t,v=.6)=>{nz(.22,2800,250,v,'lowpass',1);osc('sine',85,35,t,.3,v*.8)}),sGeiger=()=>nz(.012,6000,6000,.12,'highpass'),sBeat=A(t=>{osc('sine',62,40,t,.14,.3);osc('sine',54,38,t+.17,.12,.2)}),sWhiz=A(t=>nz(.2,3200,800,.1,'bandpass')),sStep=A((t,k)=>{if(k==0){nz(.05,3800,1400,.1,'bandpass');osc('sine',130,70,t,.05,.08)}else if(k==1)nz(.1,1500,400,.09,'lowpass');else nz(.07,2400,600,.12,'bandpass')});
-function music(){const sp=60/78/4,m=x=>440*Math.pow(2,(x-69)/12),ch=[[53,57,60,64,67],[52,55,59,62,66],[50,53,57,60,64],[48,52,55,59,62]];let n=0,nt=AC.currentTime+.1;dl.delayTime.value=.577;
+const sHit=A(t=>osc('triangle',1500,900,t,.08,.25)),sHurt=A(t=>{osc('sine',100,40,t,.25,.6);nz(.15,500,150,.3,'lowpass')}),sGun=A((t,v=.6)=>{nz(.22,2800,250,v,'lowpass',1);osc('sine',85,35,t,.3,v*.8)}),sGeiger=()=>nz(.012,6000,6000,.12,'highpass'),sBeat=A(t=>{osc('sine',62,40,t,.14,.3);osc('sine',54,38,t+.17,.12,.2)}),sWhiz=A(t=>nz(.2,3200,800,.1,'bandpass')),sStep=A((t,k,v)=>{v=v||1;const pn=AC.createStereoPanner?AC.createStereoPanner():null,dst=pn||mg,j=rnd(.88,1.14);if(pn){pn.pan.value=(stp++%2?1:-1)*.15;pn.connect(mg)}
+if(k==0){nzAt(t,.05,2300*j,900,.13*v,'bandpass',dst);osc('sine',115*j,65,t,.07,.12*v,dst);nzAt(t+.07,.025,4200,2500,.05*v,'highpass',dst);osc('sine',150,90,t+.07,.04,.04*v,dst)}
+else if(k==1){nzAt(t,.12,1400*j,450,.1*v,'lowpass',dst);osc('sine',78*j,50,t,.09,.1*v,dst);nzAt(t+.05,.1,3000,1500,.03*v,'highpass',dst)}
+else{for(let i=0;i<4;i++)nzAt(t+i*.022,.035,rnd(1400,2600),rnd(500,900),.07*v,'bandpass',dst);osc('sine',92*j,55,t,.08,.1*v,dst)}});
+function music(){const sp=60/82/4,m=x=>440*Math.pow(2,(x-69)/12),ch=[[57,60,64,67,71],[53,57,60,64,67],[50,53,57,60,64],[52,56,59,62,65]];let n=0,nt=AC.currentTime+.1;dl.delayTime.value=sp*3;
 const mb=AC.createGain();mb.gain.value=.7;mb.connect(mg);mb.connect(rv);MB=mb;
-const pf=AC.createBiquadFilter();pf.type='lowpass';pf.frequency.value=800;pf.Q.value=.7;const pg=AC.createGain();pg.gain.value=.5;pf.connect(pg);pg.connect(mb);
-const lf=AC.createOscillator(),lg=AC.createGain();lf.frequency.value=.03;lg.gain.value=200;lf.connect(lg);lg.connect(pf.frequency);lf.start();
-const eb=AC.createGain(),ed=AC.createGain();ed.gain.value=.3;eb.connect(mb);eb.connect(ed);ed.connect(dl);
-const bf=AC.createBiquadFilter();bf.type='lowpass';bf.frequency.value=320;bf.connect(mb);
-const ep=(f,t,v)=>{osc('sine',f,0,t,2.6,v,eb,.006);osc('sine',f*2,0,t,1.1,v*.4,eb,.004);osc('triangle',f*4,0,t,.35,v*.12,eb,.002)};
-setInterval(()=>{while(nt<AC.currentTime+.25){const c=ch[(n>>5)&3],s=n&31;
-if(s==0)c.forEach(x=>{osc('sine',m(x),0,nt,34*sp,.022,pf,2.8);osc('triangle',m(x)*1.004,0,nt,34*sp,.012,pf,3.4)});
-if(s==0||s==16)c.slice(0,4).forEach((x,j)=>ep(m(x+12),nt+j*.045,s==0?.04:.028));
-if(s==24&&Math.random()<.6)ep(m(c[(n>>5)%5]+24),nt,.02);
-if(s==0||s==16)osc('sine',m(c[0]-24),0,nt,14*sp,.15,bf,.15);
-if(tense>.5&&s%8==0)osc('sine',58,38,nt,.4,.06+tense*.12);
-pf.frequency.value=800+tense*500;tense=Math.max(0,tense-sp*.04);nt+=sp;n++}},50)}
+const pf=AC.createBiquadFilter();pf.type='lowpass';pf.frequency.value=700;pf.Q.value=.7;const pg=AC.createGain();pg.gain.value=.5;pf.connect(pg);pg.connect(mb);
+const lf=AC.createOscillator(),lg=AC.createGain();lf.frequency.value=.03;lg.gain.value=180;lf.connect(lg);lg.connect(pf.frequency);lf.start();
+const eb=AC.createGain(),ed=AC.createGain();ed.gain.value=.25;eb.connect(mb);eb.connect(ed);ed.connect(dl);
+const lb=AC.createGain();lb.connect(mb);lb.connect(dl);
+const bf=AC.createBiquadFilter();bf.type='lowpass';bf.frequency.value=380;bf.connect(mb);
+const fe=(f,t,v)=>{const c=AC.createOscillator(),md=AC.createOscillator(),mo=AC.createGain(),g=AC.createGain();c.type=md.type='sine';c.frequency.value=f;md.frequency.value=f;mo.gain.setValueAtTime(f*1.6,t);mo.gain.exponentialRampToValueAtTime(f*.12,t+.5);md.connect(mo);mo.connect(c.frequency);g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(v,t+.005);g.gain.exponentialRampToValueAtTime(.0001,t+2.4);c.connect(g);g.connect(eb);c.start(t);md.start(t);c.stop(t+2.5);md.stop(t+2.5);osc('sine',f*14,0,t,.08,v*.05,eb,.002)};
+const pad=(f,t,d,v)=>[-6,0,6].forEach(cn=>{const o=AC.createOscillator(),g=AC.createGain();o.type='sawtooth';o.frequency.value=f;o.detune.value=cn;g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(v,t+1.2);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(pf);o.start(t);o.stop(t+d+.1)});
+const kick=t=>{osc('sine',115,42,t,.32,.34,mb,.002);osc('sine',58,40,t,.4,.16,mb,.004)};
+const snare=t=>{osc('triangle',200,130,t,.14,.07,mb,.002);nzAt(t,.17,2600,800,.1,'bandpass',mb);nzAt(t,.06,1400,700,.08,'lowpass',mb)};
+const hat=(t,v)=>nzAt(t,.045,8000,6000,v,'highpass',mb);
+setInterval(()=>{while(nt<AC.currentTime+.25){const bar=(n>>4)&3,c=ch[bar],s=n&15,tt=nt+((n&1)?sp*.15:0),r=c[0]-12;
+if(s==0){c.slice(0,4).forEach((x,j)=>fe(m(x),tt+j*.04,.04));c.forEach(x=>pad(m(x),tt,18*sp,.008))}
+if(s==10)c.slice(1,4).forEach((x,j)=>fe(m(x),tt+j*.03,.022));
+if(s==0)osc('sine',m(r),0,tt,sp*6,.2,bf,.015);if(s==6)osc('sine',m(r+12),0,tt,sp*3,.1,bf,.015);if(s==10)osc('sine',m(r+7),0,tt,sp*4,.13,bf,.015);if(s==14&&bar%2)osc('sine',m(r+10),0,tt,sp*2,.08,bf,.015);
+if(s==0||s==10||(s==6&&bar%2))kick(tt);
+if(s==4||s==12)snare(tt);
+if(s%4==0)hat(tt,.02+tense*.01);if(s%4==3)hat(tt,.011+tense*.01);
+if(s==12&&bar%2==0&&Math.random()<.5){const f=m(c[Math.floor(Math.random()*5)]+24);osc('triangle',f,0,tt,1,.02,lb,.03)}
+pf.frequency.value=700+tense*500;tense=Math.max(0,tense-sp*.04);nt+=sp;n++}},50)}
 // ---------- GAME ----------
-const P={},enemies=[],corpses=[],BL=[];let go=0,last=0,kick=0,hold=0,jx=0,jy=0,swx=0,swy=0,spT=0,bob=0,Wx=0,Wz=0,stepD=0,hbT=0,tense=0,cro=0,msgT,hpv=new T.Vector3();
+const P={},enemies=[],corpses=[],BL=[];let go=0,last=0,kick=0,hold=0,jx=0,jy=0,swx=0,swy=0,spT=0,bob=0,Wx=0,Wz=0,stepD=0,hbT=0,tense=0,cro=0,stp=0,msgT,hpv=new T.Vector3();
 const K={};
 const WL=new T.LineBasicMaterial({color:0xbdbdbd,transparent:true,opacity:.45}),gm=new T.MeshBasicMaterial({color:0x2b2b2b}),vm=new T.Group(),H=Math.PI/2,vmA=new T.MeshLambertMaterial({color:0x303030}),vmB=new T.MeshLambertMaterial({color:0x151515}),vmC=new T.MeshLambertMaterial({color:0x6b6b6b});
 const part=(g,x,y,z,m,rx)=>{const o=new T.Mesh(g,m===gm?vmA:m===pap?vmC:m||vmB);o.position.set(x,y,z);o.rotation.x=rx||0;o.add(new T.LineSegments(new T.EdgesGeometry(g,30),WL));vm.add(o);return o},BX=(w,h,d)=>new T.BoxGeometry(w,h,d),CY=(r,r2,l)=>new T.CylinderGeometry(r,r2,l,10);
@@ -312,7 +323,7 @@ function upd(dt,t){
 let ix=(K.KeyD||K.ArrowRight?1:0)-(K.KeyA||K.ArrowLeft?1:0)+jx,iz=(K.KeyS||K.ArrowDown?1:0)-(K.KeyW||K.ArrowUp?1:0)+jy;const l=Math.hypot(ix,iz);if(l>1){ix/=l;iz/=l}
 P.mv=l>.1;if(P.sc||P.cr)P.rn=0;cro+=((P.cr?1:0)-cro)*Math.min(1,dt*10);$('bl').classList.toggle('on',!!P.rn);$('bc').classList.toggle('on',!!P.cr);
 const run=(K.ShiftLeft||P.rn)&&!P.sc&&!P.cr,sp=P.cr?2:P.sc?1.5:run?7:4,sn=Math.sin(P.yaw),cs=Math.cos(P.yaw);
-mv(P,(ix*cs+iz*sn)*sp*dt,(-ix*sn+iz*cs)*sp*dt,.5);if(l>.1){bob+=dt*sp;stepD+=sp*dt;if(stepD>2.2){stepD=0;sStep(Math.hypot(P.x,P.z+40)<90?0:gh(P.x,P.z)>8?1:2)}}
+mv(P,(ix*cs+iz*sn)*sp*dt,(-ix*sn+iz*cs)*sp*dt,.5);if(l>.1){bob+=dt*sp;stepD+=sp*dt;if(stepD>2.2){stepD=0;sStep(Math.hypot(P.x,P.z+40)<90?0:gh(P.x,P.z)>8?1:2,P.cr?.45:P.sc?.5:run?1.25:1)}}
 let sdy=0;if((K.Space||hold||isT&&l<.1)&&P.sc&&!P.wd&&P.br>0){sdy=1;P.br-=dt/6;if(P.br<=0){P.br=0;P.wd=1;msg('TAK KENA')}}else{P.br=Math.min(1,P.br+dt/5);if(P.wd&&P.br>.35)P.wd=0}
 if(sdy){hbT-=dt;if(hbT<=0){hbT=.3+P.br*.7;sBeat()}}
 const a=(P.sc?(sdy?.0004:.003)*(l>.1?2.5:1)*(P.wd?1.8:1):.0008)*(P.cr?.6:1);swx=(Math.sin(t*1.7)+Math.sin(t*.7)*.8)*a;swy=(Math.cos(t*1.3)+Math.sin(t*.5)*.8)*a;
