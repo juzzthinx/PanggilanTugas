@@ -123,12 +123,41 @@ html,body{font-family:'Chakra Petch',system-ui,sans-serif;font-weight:700}
 #bt{right:162px;bottom:calc(100px + env(safe-area-inset-bottom,0px));width:46px;height:46px;font-size:10px}.L #bt{right:auto;left:162px}
 .pls{animation:pl 1s infinite}@keyframes pl{50%{box-shadow:0 0 0 2px #000,0 0 0 5px #fff}}
 #stm{left:calc(10px + env(safe-area-inset-left,0px));bottom:calc(42px + env(safe-area-inset-bottom,0px));width:150px;height:4px;background:rgba(0,0,0,.25)}#stb{display:block;height:100%;background:#000;width:100%}
+
+/* ---- minimal army controls (Bahasa Malaysia) ---- */
+.tb,#bb,#bf,#gs{--c:#e3e6d4;--br:linear-gradient(var(--c),var(--c)),linear-gradient(var(--c),var(--c)),linear-gradient(var(--c),var(--c)),linear-gradient(var(--c),var(--c)),linear-gradient(var(--c),var(--c)),linear-gradient(var(--c),var(--c)),linear-gradient(var(--c),var(--c)),linear-gradient(var(--c),var(--c));
+border:0;border-radius:3px;background-color:rgba(12,16,10,.52);background-image:var(--br);background-repeat:no-repeat;background-size:9px 1.5px,1.5px 9px,9px 1.5px,1.5px 9px,9px 1.5px,1.5px 9px,9px 1.5px,1.5px 9px;background-position:0 0,0 0,100% 0,100% 0,0 100%,0 100%,100% 100%,100% 100%;
+color:var(--c);box-shadow:none;opacity:1;text-shadow:none;font-family:'Black Ops One','Chakra Petch',Impact,sans-serif;font-weight:400;letter-spacing:.16em}
+.tb.on{--c:#10120d;background-color:rgba(222,226,204,.93);background-image:var(--br);box-shadow:none;color:var(--c)}
+#bb{--c:#f2f4e4;background-color:rgba(52,60,34,.7);font-size:13px;letter-spacing:.22em;background-size:12px 2px,2px 12px,12px 2px,2px 12px,12px 2px,2px 12px,12px 2px,2px 12px}
+#bs,#bl,#bc,#br{font-size:10px}
+#bt{width:52px;height:44px;font-size:8.5px;letter-spacing:.06em}
+#gs{font-size:16px;line-height:32px;font-family:system-ui,sans-serif;letter-spacing:0}
+.tb.pls{animation:plx 1s infinite}@keyframes plx{50%{background-color:rgba(176,132,28,.62)}}
+#jb{border:1.5px solid rgba(14,18,10,.75);border-radius:50%;background-color:rgba(12,16,10,.26);box-shadow:0 0 0 1px rgba(227,230,212,.45);background-image:linear-gradient(rgba(227,230,212,.9),rgba(227,230,212,.9)),linear-gradient(rgba(227,230,212,.9),rgba(227,230,212,.9)),linear-gradient(rgba(227,230,212,.9),rgba(227,230,212,.9)),linear-gradient(rgba(227,230,212,.9),rgba(227,230,212,.9));background-repeat:no-repeat;background-size:1.5px 11px,1.5px 11px,11px 1.5px,11px 1.5px;background-position:50% 0,50% 100%,0 50%,100% 50%}
+#jk{border-radius:50%;background:rgba(18,24,12,.85);box-shadow:inset 0 0 0 2px rgba(227,230,212,.9),inset 0 0 0 9px rgba(18,24,12,.85),inset 0 0 0 10px rgba(227,230,212,.5)}
+#stp{background:rgba(8,10,6,.95);color:#dfe2cf;font-family:'Chakra Petch',system-ui,sans-serif;letter-spacing:.2em}
+#stp h2{font-family:'Black Ops One',Impact,sans-serif;font-weight:400;font-size:18px;letter-spacing:.42em;padding:0 0 10px;border-bottom:1px solid rgba(223,226,207,.35)}
+#stp input[type=range],#stp input[type=checkbox]{accent-color:#aab27f}
+#stp button{border:1px solid rgba(223,226,207,.75);border-radius:2px;color:#dfe2cf;font-family:'Black Ops One',Impact,sans-serif;font-weight:400;font-size:12px;letter-spacing:.3em;padding:10px 26px}
+#sbst{opacity:.55;font-size:10px;letter-spacing:.3em}
+
+/* ---- unified army stencil font ---- */
+.p,.pp,#msg,#fx,#rg,#kt,#stp label,#sbst{font-family:'Black Ops One','Chakra Petch',Impact,sans-serif;font-weight:400}
+.p{font-size:11.5px;letter-spacing:.12em}
+#rd{font-size:11px}#wd{font-size:11.5px}#ob{font-size:10.5px;letter-spacing:.1em}#am{font-size:16px;letter-spacing:.08em}
+#rg{font-size:13px;letter-spacing:.08em}
+#msg{font-size:15px;letter-spacing:.28em}
+.pp{font-size:15px;letter-spacing:.2em}
+#fx{font-size:19px;letter-spacing:.2em}
+#kt{font-size:13px;letter-spacing:.34em}
+#stp label{font-size:11px;letter-spacing:.2em}
 </style></head><body>
 <div id="pg" class="h"></div><div id="tl" class="h p"></div><div id="cp" class="h p"></div><div id="wd" class="h p"><span id="wa">↑</span> <b id="wv"></b></div><div id="rd" class="h p"></div>
 <div id="sc" class="h"><svg viewBox="-100 -100 200 200" fill="none" stroke="#000"><path d="M-100 0H-75M75 0H100M0 -100V-75M0 75V100" stroke-width="3"/><path d="M-75 0H-3M3 0H75M0 -75V-3M0 3V75" stroke-width=".4"/><path d="M15 0H65M-15 0H-65M0 15V65M0 -15V-65" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0 10"/><circle r="99" stroke-width=".5"/><circle r="94" stroke-width="3" stroke-dasharray=".6 9.2" opacity=".8"/><path d="M-75 0H75M0 -75V75" stroke-width="4" stroke-dasharray=".5 9.5" opacity=".8"/><ellipse cx="-48" cy="-56" rx="28" ry="8" transform="rotate(-40 -48 -56)" fill="#fff" stroke="none" opacity=".35"/><g fill="#000" stroke="none" font-family="Chakra Petch,sans-serif" font-size="5" font-weight="500"><text x="4" y="-22">1</text><text x="4" y="-42">2</text><text x="4" y="-62">3</text><text x="4" y="30">1</text><text x="4" y="50">2</text><text x="4" y="70">3</text><text x="-84" y="88" font-size="6">x10</text></g></svg><div id="sb"><i id="sbi"></i></div><div id="rg"></div></div><div id="fx" class="h"></div><div id="xh" class="h"></div><div id="hm" class="h">✕</div><div id="fl" class="h"></div><div id="msg" class="h"></div>
 <div id="hp" class="h p"><i id="hb"></i></div><div id="am" class="h p"></div>
-<canvas id="rdr" width="90" height="90" class="h"></canvas><div id="ht" class="h"></div><div id="stm" class="h"><i id="stb"></i></div><div id="ob" class="h p"><span id="oa">↑</span> <span id="ot"></span></div><div id="kc"><i id="kt"></i></div><div id="gs" data-b>⚙</div><div id="stp"><h2>TETAPAN</h2><label>KEPEKAAN <input type="range" id="ssn" min="50" max="200"></label><label><input type="checkbox" id="slf"> TANGAN KIRI</label><label><input type="checkbox" id="svb"> GETARAN</label><label>KEPEKAAN SKOP <input type="range" id="sss" min="50" max="200"></label><label><input type="checkbox" id="saa"> BANTUAN SASARAN</label><div id="sbst"></div><button id="smd"></button><button id="sx">TERUSKAN</button></div><div id="jb"><div id="jk"></div></div>
-<div class="tb" data-b id="bf">TEMBAK</div><div class="tb" data-b id="bs">SKOP</div><div class="tb" data-b id="bl">LARI</div><div class="tb" data-b id="bc">TUNDUK</div><div class="tb" data-b id="bt">STD</div><div class="tb" data-b id="bb">TEMBAK</div><div class="tb" data-b id="br">ISI</div>
+<canvas id="rdr" width="90" height="90" class="h"></canvas><div id="ht" class="h"></div><div id="stm" class="h"><i id="stb"></i></div><div id="ob" class="h p"><span id="oa">↑</span> <span id="ot"></span></div><div id="kc"><i id="kt"></i></div><div id="gs" data-b title="Tetapan">⚙</div><div id="stp"><h2>TETAPAN</h2><label>KEPEKAAN <input type="range" id="ssn" min="50" max="200"></label><label><input type="checkbox" id="slf"> TANGAN KIRI</label><label><input type="checkbox" id="svb"> GETARAN</label><label>KEPEKAAN SKOP <input type="range" id="sss" min="50" max="200"></label><label><input type="checkbox" id="saa"> BANTUAN SASARAN</label><div id="sbst"></div><button id="smd"></button><button id="sx">TERUSKAN</button></div><div id="jb"><div id="jk"></div></div>
+<div class="tb" data-b id="bf">TEMBAK</div><div class="tb" data-b id="bs">SKOP</div><div class="tb" data-b id="bl">LARI</div><div class="tb" data-b id="bc">TUNDUK</div><div class="tb" data-b id="bt">BIASA</div><div class="tb" data-b id="bb">TEMBAK</div><div class="tb" data-b id="br">ISI</div>
 <div id="title"><div id="bn">TENTERA DARAT MALAYSIA</div><svg id="fg" viewBox="0 0 280 140"><defs><pattern id="sp" width="280" height="20" patternUnits="userSpaceOnUse"><rect width="280" height="10" fill="#000"/></pattern></defs><rect width="280" height="140" fill="#fff"/><rect width="280" height="140" fill="url(#sp)"/><rect width="140" height="80" fill="#000" stroke="#fff" stroke-width="2"/><circle cx="48" cy="40" r="25" fill="#fff"/><circle cx="56" cy="40" r="20" fill="#000"/><polygon id="st" fill="#fff"/></svg><h1>PANGGILAN<br>TUGAS</h1><p>UKRAINE · 1993</p><div class="stp">SULIT</div>
 <div class="ct"><b>SENTUHAN</b> — Kiri: joystick gerak (tolak penuh = lari) · Kanan: seret untuk pandang · SKOP: zum/lepas · NAFAS: tahan (tahan hayunan) · ISI: isi peluru<br>
 <b>KEYBOARD</b> — WASD gerak · Shift lari · Tetikus pandang · Klik kiri tembak · Klik kanan (tahan) skop · Space tahan nafas · R isi peluru<br>
@@ -142,7 +171,7 @@ if(isT)document.body.classList.add('T'),$('am').classList.add('t');
 const R=new T.WebGLRenderer({antialias:true});R.setPixelRatio(Math.min(devicePixelRatio,1.5));R.setSize(innerWidth,innerHeight);document.body.prepend(R.domElement);
 const S=new T.Scene();S.background=new T.Color(0xbddbf2);S.fog=new T.Fog(0xbddbf2,70,430);
 const C=new T.PerspectiveCamera(70,innerWidth/innerHeight,.1,600);C.rotation.order='YXZ';S.add(C);
-const ink=new T.MeshBasicMaterial({color:0}),pap=new T.MeshBasicMaterial({color:0xffffff}),oln=new T.MeshBasicMaterial({color:0,side:T.BackSide}),LM=new T.LineBasicMaterial({color:0});
+const ink=new T.MeshBasicMaterial({color:0}),pap=new T.MeshBasicMaterial({color:0xffffff}),oln=new T.MeshBasicMaterial({color:0,side:T.BackSide}),LM=new T.LineBasicMaterial({color:0}),LMs=new T.LineBasicMaterial({color:0x2a2a2a,transparent:true,opacity:.22});
 const cv=(w,h,f)=>{const c=document.createElement('canvas');c.width=w;c.height=h;f(c.getContext('2d'),w,h);return c};
 const tx=(c,rx=1,ry=1)=>{const t=new T.CanvasTexture(c);t.wrapS=t.wrapT=T.RepeatWrapping;t.repeat.set(rx,ry);return t};
 // ---------- WORLD ----------
@@ -151,14 +180,47 @@ const gc2=cv(256,256,(g,w,h)=>{g.fillStyle='#fff';g.fillRect(0,0,w,h);g.lineCap=
 const hs=(x,z)=>{const n=Math.sin(x*12.9898+z*78.233)*43758.5453;return n-Math.floor(n)};
 const vn=(x,z)=>{const i=Math.floor(x),j=Math.floor(z),fx=x-i,fz=z-j,u=fx*fx*(3-2*fx),v=fz*fz*(3-2*fz),a=hs(i,j),b=hs(i+1,j),c=hs(i,j+1),d=hs(i+1,j+1);return a+(b-a)*u+(c-a)*v+(a-b-c+d)*u*v};
 const fbm=(x,z,o)=>{let a=.5,s=0,f=1;for(let k=0;k<o;k++){s+=a*vn(x*f,z*f);f*=2.03;a*=.5}return s};
-const gh0=(x,z)=>{const f=Math.min(1,Math.max(0,(Math.hypot(x,z+40)-90)/120)),big=fbm(x*.0035+3.1,z*.0035+1.7,3)-.44,mid=fbm(x*.011+9.2,z*.011+4.4,3)-.44,fine=fbm(x*.045,z*.045,2)-.37,gl=1-Math.abs(fbm(x*.008+5,z*.008+8,3)*2-.88),carve=Math.pow(Math.max(0,gl),7)*5.5;return f*(big*40+mid*12+fine*2.4-carve+4)};
+const gh0=(x,z)=>{const f=Math.min(1,Math.max(0,(Math.hypot(x,z+40)-90)/120)),wx=x+(fbm(x*.004+11,z*.004+5,3)-.5)*80,wz=z+(fbm(x*.004+2,z*.004+17,3)-.5)*80,big=fbm(wx*.003+3.1,wz*.003+1.7,4)-.44,mid=fbm(x*.011+9.2,z*.011+4.4,3)-.44,fine=fbm(x*.045,z*.045,3)-.37,gl=1-Math.abs(fbm(x*.008+5,z*.008+8,3)*2-.88),carve=Math.pow(Math.max(0,gl),7)*5.5,rg=1-Math.abs(fbm(wx*.0065+7,wz*.0065+3,4)*2-1),rr=Math.min(1,Math.max(0,(Math.hypot(x,z)-380)/110));return f*(big*44+mid*11+fine*2.2-carve+4+rg*rg*46*rr)};
 const HM=new Float32Array(401*401);for(let j=0;j<=400;j++)for(let i=0;i<=400;i++)HM[j*401+i]=gh0(-800+i*4,-800+j*4);
 const gh=(x,z)=>{let u=(x+800)/4,v=(z+800)/4;u=u<0?0:u>399.999?399.999:u;v=v<0?0:v>399.999?399.999:v;const i=u|0,j=v|0,fx=u-i,fz=v-j,o=j*401+i;return HM[o]*(1-fx)*(1-fz)+HM[o+1]*fx*(1-fz)+HM[o+401]*(1-fx)*fz+HM[o+402]*fx*fz};
 const slp=(x,z)=>Math.hypot(gh(x+3,z)-gh(x-3,z),gh(x,z+3)-gh(x,z-3))/6;
-const tg=new T.PlaneGeometry(1600,1600,192,192),tp=tg.attributes.position,tc=new Float32Array(tp.count*3);
-for(let i=0;i<tp.count;i++){const x=tp.getX(i),z=-tp.getY(i),h=gh(x,z),nx=(gh(x+6,z)-gh(x-6,z))/12,nz=(gh(x,z+6)-gh(x,z-6))/12,ao=(gh(x+14,z)+gh(x-14,z)+gh(x,z+14)+gh(x,z-14))/4-h,fld=Math.floor(vn(x*.004+7,z*.004+3)*3)/3,c=Math.round(Math.max(.4,Math.min(1,1+(.62-nx*1.7-nz*1.1-.62)*.6-ao*.05-fld*.06-(vn(x*.02,z*.02)-.5)*.05))*8)/8;tp.setZ(i,h);{const gt=Math.max(0,Math.min(1,(Math.hypot(x,z+40)-55)/70))*Math.max(0,Math.min(1,1-Math.hypot(nx,nz)*2.4))*(.75+.25*vn(x*.03+2,z*.03+5));{const dv=vn(x*.012+4,z*.012+9);tc.set([c*(.74+(.40+.16*dv-.74)*gt),c*(.72+(.58+.08*(1-dv)-.72)*gt),c*(.66+(.2+.06*dv-.66)*gt)],i*3)}}}
-tg.setAttribute('color',new T.BufferAttribute(tc,3));
-const gr=new T.Mesh(tg,new T.MeshBasicMaterial({map:tx(gc2,160,160),vertexColors:true}));gr.rotation.x=-Math.PI/2;S.add(gr);
+const tg=new T.PlaneGeometry(1600,1600,200,200),tp=tg.attributes.position,tc=new Float32Array(tp.count*3);
+for(let i=0;i<tp.count;i++){const x=tp.getX(i),z=-tp.getY(i),h=gh(x,z),nx=(gh(x+6,z)-gh(x-6,z))/12,nz=(gh(x,z+6)-gh(x,z-6))/12,ao=(gh(x+14,z)+gh(x-14,z)+gh(x,z+14)+gh(x,z-14))/4-h,c=Math.max(.4,Math.min(1,1+(-nx*1.7-nz*1.1)*.6-ao*.05)),k=.74+.26*c;tp.setZ(i,h);tc.set([k,k,k],i*3)}
+tg.setAttribute('color',new T.BufferAttribute(tc,3));tg.computeVertexNormals();
+const NZ=(()=>{const N=256,id=new Uint8Array(N*N*4),pn=(u,v,p,o)=>{const x=u*p,y=v*p,i=Math.floor(x),j=Math.floor(y),fx=x-i,fy=y-j,sx=fx*fx*(3-2*fx),sy=fy*fy*(3-2*fy),h=(a,b)=>{const q=Math.sin(((a%p+p)%p+o*17.13)*127.1+((b%p+p)%p+o*3.7)*311.7)*43758.5453;return q-Math.floor(q)};return h(i,j)*(1-sx)*(1-sy)+h(i+1,j)*sx*(1-sy)+h(i,j+1)*(1-sx)*sy+h(i+1,j+1)*sx*sy};
+for(let y=0;y<N;y++)for(let x=0;x<N;x++){const u=x/N,v=y/N;for(let c=0;c<4;c++){const o=c*5+1;let a=.5,s=0,t=0;for(const p of [4,8,16,32]){s+=a*pn(u,v,p,o);t+=a;a*=.55}id[(y*N+x)*4+c]=Math.round(Math.max(0,Math.min(1,(s/t-.5)*1.8+.5))*255)}}
+const t=new T.DataTexture(id,N,N,T.RGBAFormat);t.wrapS=t.wrapT=T.RepeatWrapping;t.minFilter=T.LinearMipmapLinearFilter;t.magFilter=T.LinearFilter;t.generateMipmaps=true;t.needsUpdate=true;return t})();
+const gM=new T.MeshBasicMaterial({vertexColors:true});
+gM.onBeforeCompile=sh=>{sh.uniforms.uNz={value:NZ};sh.uniforms.uSun={value:new T.Vector3(.59,.62,-.65).normalize()};
+sh.vertexShader='varying vec3 vWP;varying vec3 vN;\n'+sh.vertexShader.replace('#include <begin_vertex>','#include <begin_vertex>\nvWP=(modelMatrix*vec4(transformed,1.0)).xyz;vN=normalize(mat3(modelMatrix)*normal);');
+sh.fragmentShader='uniform sampler2D uNz;uniform vec3 uSun;varying vec3 vWP;varying vec3 vN;\n'+sh.fragmentShader.replace('#include <map_fragment>',`vec2 wp=vWP.xz;
+float cd=length(vWP-cameraPosition);
+float dtl=1.0-smoothstep(30.0,110.0,cd);
+vec4 n1=texture2D(uNz,wp*.0021);
+vec4 n2=texture2D(uNz,wp*.011);
+vec4 n3=texture2D(uNz,wp*.065);
+vec4 n4=texture2D(uNz,wp*.4);
+vec3 nn=normalize(vN);
+float slope=1.0-clamp(nn.y,0.0,1.0);
+float rockM=smoothstep(.17,.33,slope+(n2.g-.5)*.12);
+float rr=length(wp-vec2(0.0,-40.0));
+float conc=1.0-smoothstep(52.0,105.0,rr+(n2.b-.5)*40.0);
+vec3 grass=mix(vec3(.27,.40,.12),vec3(.40,.50,.17),smoothstep(.35,.65,n1.r));
+grass=mix(grass,vec3(.52,.49,.21),smoothstep(.58,.82,n1.g)*.7);
+grass*=.78+.44*n3.r;
+grass*=1.0+(n4.g-.5)*.35*dtl+(n4.b-.5)*.2*dtl;
+vec3 dirt=mix(vec3(.31,.24,.16),vec3(.42,.33,.22),n2.b)*(.85+.3*n3.g)*(1.0+(n4.r-.5)*.3*dtl);
+vec3 rock=mix(vec3(.34,.33,.31),vec3(.54,.51,.46),n2.r)*(.8+.4*n4.r)*(.92+.16*sin(vWP.y*2.6+n2.g*7.0))*(1.0+(n4.a-.5)*.3*dtl);
+float dirtM=smoothstep(.64,.8,n2.b*.65+n1.b*.55)*(1.0-rockM);
+dirtM=max(dirtM,smoothstep(.1,.2,slope)*(1.0-rockM)*.55);
+vec3 col=mix(grass,dirt,dirtM);
+col=mix(col,rock,rockM);
+vec3 grav=mix(vec3(.45,.44,.41),vec3(.60,.58,.54),n3.r)*(.85+.3*n4.g);
+col=mix(col,grav,conc);
+float lam=clamp(dot(nn,normalize(uSun)),0.0,1.0);
+col*=.6+.66*lam;
+diffuseColor.rgb=col;`)};
+const gr=new T.Mesh(tg,gM);gr.rotation.x=-Math.PI/2;S.add(gr);
 const skOld=new T.MeshBasicMaterial({map:tx(cv(256,1024,(g,w,h)=>{const q=g.createLinearGradient(0,0,0,h*.5);[[0,'#030303'],[.2,'#161616'],[.42,'#4a4a4a'],[.62,'#8c8c8c'],[.8,'#cfcfcf'],[.93,'#f1f1f1'],[1,'#fff']].forEach(([p,c])=>q.addColorStop(p,c));g.fillStyle=q;g.fillRect(0,0,w,h*.5);g.fillStyle='#fff';g.fillRect(0,h*.5,w,h*.5);g.fillStyle='#000';for(let y=0;y<h*.5;y+=2){const t=y/(h*.5);g.globalAlpha=.32*Math.sin(Math.min(1,t/.95)*Math.PI);for(let x=(y/2%2);x<w;x+=2){g.beginPath();g.arc(x,y,.7,0,7);g.fill()}}g.globalAlpha=1}),8,1),side:T.BackSide,fog:false,depthWrite:false});
 const skNew=new T.ShaderMaterial({uniforms:{uT:{value:0},uPR:{value:1},uSun:{value:new T.Vector3(Math.sin(2.4)*Math.cos(.5),Math.sin(.5),Math.cos(2.4)*Math.cos(.5))}},vertexShader:`varying vec3 vD;
 void main(){vD=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}`,fragmentShader:`varying vec3 vD;
@@ -213,19 +275,20 @@ const smT=new T.CanvasTexture(cv(64,64,g=>{const d=g.createRadialGradient(32,32,
 [[0,-60],[-110,120],[120,140],[-60,10]].forEach(([x,z])=>{for(let i=0;i<12;i++){const s=new T.Sprite(new T.SpriteMaterial({map:smT,transparent:true,depthWrite:false}));S.add(s);SM.push({s,x,z,k:i})}});
 const AS=new T.Points(new T.BufferGeometry().setAttribute('position',new T.BufferAttribute(new Float32Array(450),3)),new T.PointsMaterial({color:0x6a6455,size:.12,transparent:true,opacity:.45}));AS.frustumCulled=false;S.add(AS);const ap=AS.geometry.attributes.position.array;for(let i=0;i<450;i+=3){ap[i]=rnd(-40,40);ap[i+1]=rnd(0,25);ap[i+2]=rnd(-40,40)}
 const POSTS=[[-190,-20],[190,-110],[-30,-210]],CH=[30,-95],LZ=[0,140],SZ=[0,190],RC=[0,-60],BLAST={t:0},M={},KC={t:0},PK=[],CR=[],B=[],fac=cv(128,128,(g,w,h)=>{g.fillStyle='#e9e9e9';g.fillRect(0,0,w,h);for(let i=0;i<900;i++){g.fillStyle=`rgba(0,0,0,${rnd(.03,.09)})`;g.fillRect(rnd(0,w),rnd(0,h),rnd(1,2),rnd(1,2))}g.strokeStyle='rgba(0,0,0,.22)';g.lineWidth=1;for(let y=0;y<h;y+=32){g.beginPath();g.moveTo(0,y+.5);g.lineTo(w,y+.5);g.stroke()}for(let x=0;x<w;x+=64){g.beginPath();g.moveTo(x+.5,0);g.lineTo(x+.5,h);g.stroke()}for(let y=10;y<h;y+=32)for(let x=8;x<w;x+=32){g.fillStyle='#2a2a2a';g.fillRect(x,y,16,18);g.fillStyle='rgba(255,255,255,.15)';g.fillRect(x,y,16,5);g.fillStyle='#000';g.fillRect(x-1,y+17,18,2);g.fillStyle='rgba(0,0,0,.08)';g.fillRect(x+3,y+19,10,rnd(6,12))}});
-const sl=new T.DirectionalLight(0xffffff,.55);sl.position.set(-1,1.5,.6);S.add(new T.AmbientLight(0xffffff,.62),sl);const cm=new T.MeshLambertMaterial({color:0xdddddd});
-function bx(x,z,w,h,d,m){const y0=gh(x,z)-6,Hh=h+6,o=new T.Mesh(new T.BoxGeometry(w,Hh,d),m||new T.MeshLambertMaterial({map:tx(fac,Math.max(w,d)/12,Hh/10)}));o.position.set(x,y0+Hh/2,z);o.add(new T.LineSegments(new T.EdgesGeometry(o.geometry),LM));S.add(o);B.push({x0:x-w/2,x1:x+w/2,z0:z-d/2,z1:z+d/2,h:y0+Hh});return o}
-function tower(x,z){const p=[];for(let i=0;i<=12;i++){const y=i*5,u=(y-35)/35;p.push(new T.Vector2(13+9*u*u,y))}const m=new T.Mesh(new T.LatheGeometry(p,20),new T.MeshLambertMaterial({map:tx(gc,6,3),side:T.DoubleSide}));m.position.set(x,gh(x,z)-6,z);const o=new T.Mesh(m.geometry,oln);o.scale.set(1.02,1,1.02);m.add(o);S.add(m);B.push({x0:x-15,x1:x+15,z0:z-15,z1:z+15,h:gh(x,z)+54})}
+const sl=new T.DirectionalLight(0xffffff,.55);sl.position.set(.59,.62,-.65);S.add(new T.AmbientLight(0xffffff,.62),sl);const cm=new T.MeshLambertMaterial({color:0xdddddd});
+function bx(x,z,w,h,d,m){const y0=gh(x,z)-6,Hh=h+6,o=new T.Mesh(new T.BoxGeometry(w,Hh,d),m||new T.MeshLambertMaterial({map:tx(fac,Math.max(w,d)/12,Hh/10),color:new T.Color().setHSL(.1,.07,rnd(.74,.92))}));o.position.set(x,y0+Hh/2,z);o.add(new T.LineSegments(new T.EdgesGeometry(o.geometry),LMs));S.add(o);B.push({x0:x-w/2,x1:x+w/2,z0:z-d/2,z1:z+d/2,h:y0+Hh});return o}
+const CONC=cv(128,128,(g,w,h)=>{g.fillStyle='#b9b6ae';g.fillRect(0,0,w,h);for(let i=0;i<1400;i++){const v=rnd(120,200)|0;g.fillStyle='rgba('+v+','+v+','+(v-6)+','+rnd(.05,.18)+')';g.fillRect(rnd(0,w),rnd(0,h),rnd(1,3),rnd(2,14))}for(let i=0;i<10;i++){g.fillStyle='rgba(40,36,30,'+rnd(.05,.12)+')';g.fillRect(rnd(0,w),0,rnd(2,6),h)}});
+function tower(x,z){const p=[];for(let i=0;i<=12;i++){const y=i*5,u=(y-35)/35;p.push(new T.Vector2(13+9*u*u,y))}const m=new T.Mesh(new T.LatheGeometry(p,20),new T.MeshLambertMaterial({map:tx(CONC,3,3),side:T.DoubleSide}));m.position.set(x,gh(x,z)-6,z);S.add(m);B.push({x0:x-15,x1:x+15,z0:z-15,z1:z+15,h:gh(x,z)+54})}
 bx(0,-60,50,26,36);bx(0,-112,130,18,24);tower(-75,-70);tower(-115,-115);
-const st=new T.Mesh(new T.CylinderGeometry(2.5,4,120,10),new T.MeshBasicMaterial({map:tx(cv(8,64,g=>{g.fillStyle='#fff';g.fillRect(0,0,8,64);g.fillStyle='#000';g.fillRect(0,0,8,16);g.fillRect(0,32,8,16)}),1,5)}));st.position.set(55,60,-75);const so=new T.Mesh(st.geometry,oln);so.scale.set(1.08,1.01,1.08);st.add(so);S.add(st);B.push({x0:50,x1:60,z0:-80,z1:-70,h:120});
+const st=new T.Mesh(new T.CylinderGeometry(2.5,4,120,10),new T.MeshBasicMaterial({map:tx(cv(8,64,g=>{g.fillStyle='#e6e2d6';g.fillRect(0,0,8,64);g.fillStyle='#b3261e';g.fillRect(0,0,8,16);g.fillRect(0,32,8,16)}),1,5)}));st.position.set(55,60,-75);S.add(st);B.push({x0:50,x1:60,z0:-80,z1:-70,h:120});
 [[-90,40,32,28,12],[-90,95,12,28,32],[-140,60,12,28,32],[110,100,32,28,12],[135,30,12,28,32],[60,155,32,28,12],[-60,175,32,28,12],[-25,95,9,5,9],[170,-30,32,28,12]].forEach(a=>bx(...a));
 for(let i=0;i<22;i++){const x=rnd(-450,450),z=rnd(-420,420);if(Math.hypot(x,z-130)>60&&Math.hypot(x,z+80)>90){const w=rnd(14,34),d=rnd(10,26);bx(x,z,w,rnd(8,30),d)}}
 tower(210,-190);tower(-280,-20);
 for(let i=0;i<50;i++){const x=rnd(-450,450),z=rnd(-420,420);if(Math.hypot(x,z-130)>15){bx(x,z,rnd(2.5,4),1.7,rnd(2.5,4),cm);CR.push([x,z])}}
 POSTS.forEach(([x,z])=>{bx(x+5,z+3,4,1.7,3,cm);CR.push([x+5,z+3]);bx(x-5,z-3,3,1.7,4,cm);CR.push([x-5,z-3]);const pl=new T.Mesh(new T.CylinderGeometry(.08,.08,9,5),ink);pl.position.set(x,gh(x,z)+4.5,z);S.add(pl)});
 const MK=new T.Group();MK.add(new T.Mesh(new T.CylinderGeometry(.12,.12,70,5),ink));const mfl=new T.Mesh(new T.BoxGeometry(2.4,1.4,.1),ink);mfl.position.set(1.2,34,0);MK.add(mfl);MK.visible=false;S.add(MK);
-const mtW=new T.MeshLambertMaterial({color:0x2c2c2c}),mtB=new T.MeshLambertMaterial({color:0x111111});
-function wreck(x,z,k,r){const y=gh(x,z),g=new T.Group();g.position.set(x,y,z);g.rotation.y=r?Math.PI/2:0;const mp=(geo,px,py,pz,m,rz)=>{const o=new T.Mesh(geo,m||mtW);o.position.set(px,py,pz);o.rotation.z=rz||0;o.add(new T.LineSegments(new T.EdgesGeometry(geo,30),LM));g.add(o);return o};
+const mtW=new T.MeshLambertMaterial({color:0x55503a}),mtB=new T.MeshLambertMaterial({color:0x111111});
+function wreck(x,z,k,r){const y=gh(x,z),g=new T.Group();g.position.set(x,y,z);g.rotation.y=r?Math.PI/2:0;const mp=(geo,px,py,pz,m,rz)=>{const o=new T.Mesh(geo,m||mtW);o.position.set(px,py,pz);o.rotation.z=rz||0;o.add(new T.LineSegments(new T.EdgesGeometry(geo,30),LMs));g.add(o);return o};
 if(k==0){mp(new T.BoxGeometry(2.4,2.2,2.2),0,1.8,-2.6);mp(new T.BoxGeometry(2.6,.3,5.2),0,1.1,1.2);mp(new T.BoxGeometry(2.6,.15,5),0,2.6,1.2).rotation.x=.12;[-1,1].forEach(q=>[-2.6,.4,2.4].forEach(zz=>mp(new T.CylinderGeometry(.55,.55,.4,10),q*1.25,.55,zz,mtB,Math.PI/2)))}
 else{mp(new T.BoxGeometry(3.4,1.1,6.6),0,.9,0);mp(new T.BoxGeometry(2.6,.9,2.8),0,1.9,-.4);mp(new T.CylinderGeometry(.16,.16,4.2,8),0,1.95,2.2,mtB).rotation.x=Math.PI/2+.12;[-1,1].forEach(q=>mp(new T.BoxGeometry(.7,.9,7),q*1.9,.55,0,mtB))}
 S.add(g);const a=k?2.4:1.5,b=k?3.6:3.9,hx=r?b:a,hz=r?a:b;B.push({x0:x-hx,x1:x+hx,z0:z-hz,z1:z+hz,h:y+3});CR.push([x,z]);
@@ -258,45 +321,56 @@ function gUp(){GT.value=performance.now()/1000;GW.value.set(Wx,Wz);GP.value.set(
 C.getWorldDirection(gdv);const cx=C.position.x,cz=C.position.z,fl=Math.hypot(gdv.x,gdv.z)||1,fx=gdv.x/fl,fz=gdv.z/fl,ci0=Math.floor(cx/GCS),cj0=Math.floor(cz/GCS),R2=Math.ceil((GRQ+GCS)/GCS);let nb=0;
 for(let j=cj0-R2;j<=cj0+R2;j++)for(let i=ci0-R2;i<=ci0+R2;i++){const mx=(i+.5)*GCS-cx,mz=(j+.5)*GCS-cz,dd=Math.hypot(mx,mz)+.001,key=i+','+j;let m=GC.get(key);if(dd>GRQ+GCS*.7){if(m)m.visible=false;continue}if(!m){if(nb>=2)continue;m=gBuild(i,j);GC.set(key,m);nb++}m.visible=dd<GCS*1.2||(mx*fx+mz*fz)/dd>.2-30/dd}
 if(GC.size>80)for(const[k,m]of GC){const q=k.split(','),dd=Math.hypot((+q[0]+.5)*GCS-cx,(+q[1]+.5)*GCS-cz);if(dd>GRQ+GCS*3){S.remove(m);m.dispose();GC.delete(k)}}}
-{const N=220,g=new T.IcosahedronGeometry(1,0),rf=new T.InstancedMesh(g,new T.MeshLambertMaterial({color:0xe4e4e4}),N),ro=new T.InstancedMesh(g,oln,N),d=new T.Object3D();let k=0;for(let t=0;t<N*4&&k<N;t++){const x=rnd(-440,440),z=rnd(-440,440);if(!okp(x,z,4)||Math.random()>.25+slp(x,z)*2.5)continue;const s=rnd(.5,2.2);d.position.set(x,gh(x,z)+s*.35,z);d.rotation.set(rnd(0,3),rnd(0,6),rnd(0,3));d.scale.set(s*rnd(.8,1.3),s*rnd(.5,.9),s*rnd(.8,1.3));d.updateMatrix();rf.setMatrixAt(k,d.matrix);d.scale.multiplyScalar(1.12);d.updateMatrix();ro.setMatrixAt(k,d.matrix);k++}rf.count=ro.count=k;rf.frustumCulled=ro.frustumCulled=false;S.add(rf,ro)}
-{const dg=mergeG([new T.CylinderGeometry(.12,.22,5.5,5).translate(0,2.75,0),new T.CylinderGeometry(.05,.09,2.2,4).rotateZ(.9).translate(.9,4.4,0),new T.CylinderGeometry(.04,.07,1.8,4).rotateZ(-.8).translate(-.7,3.6,.2),new T.CylinderGeometry(.04,.06,1.4,4).rotateX(.8).translate(0,5,.5)]);const N=70,dm=new T.InstancedMesh(dg,ink,N),d=new T.Object3D();let k=0;for(let t=0;t<N*4&&k<N;t++){const x=rnd(-420,420),z=rnd(-420,420);if(!okp(x,z,3))continue;d.position.set(x,gh(x,z)-.2,z);d.rotation.set(0,rnd(0,6.3),rnd(-.08,.08));d.scale.setScalar(rnd(.9,1.8));d.updateMatrix();dm.setMatrixAt(k++,d.matrix)}dm.count=k;dm.frustumCulled=false;S.add(dm)}
+{const lump=(g,amp)=>{const a=g.attributes.position.array;for(let k=0;k<a.length;k+=3){const h=Math.sin(a[k]*12.9898+a[k+1]*78.233+a[k+2]*37.719)*43758.5453,f=1+((h-Math.floor(h))-.5)*amp;a[k]*=f;a[k+1]*=f;a[k+2]*=f}g.attributes.position.needsUpdate=true;g.computeVertexNormals();return g};
+const N=420,rgeo=lump(new T.IcosahedronGeometry(1,1),.5),rf=new T.InstancedMesh(rgeo,new T.MeshLambertMaterial({color:0xffffff}),N),d=new T.Object3D(),cc=new T.Color();let k=0;
+for(let t=0;t<N*5&&k<N;t++){const x=rnd(-460,460),z=rnd(-460,460);if(!okp(x,z,4)||Math.random()>.2+slp(x,z)*2.8)continue;const s=rnd(.4,2.4)*(Math.random()<.08?2.2:1);d.position.set(x,gh(x,z)+s*.2,z);d.rotation.set(rnd(-.4,.4),rnd(0,6.3),rnd(-.4,.4));d.scale.set(s*rnd(.8,1.4),s*rnd(.5,.85),s*rnd(.8,1.4));d.updateMatrix();rf.setMatrixAt(k,d.matrix);rf.setColorAt(k,cc.setHSL(.09+rnd(-.02,.03),rnd(.04,.12),rnd(.33,.55)));k++}
+rf.count=k;rf.frustumCulled=false;S.add(rf);
+const NB=320,bf=new T.InstancedMesh(lump(new T.IcosahedronGeometry(1,1),.35),new T.MeshLambertMaterial({color:0xffffff}),NB);let q=0;
+for(let t=0;t<NB*5&&q<NB;t++){const x=rnd(-460,460),z=rnd(-460,460);if(!okp(x,z,4)||slp(x,z)>.35||Math.hypot(x,z+40)<80)continue;const s=rnd(.5,1.3);d.position.set(x,gh(x,z)+s*.45,z);d.rotation.set(0,rnd(0,6.3),0);d.scale.set(s*rnd(1,1.7),s*rnd(.6,1),s*rnd(1,1.7));d.updateMatrix();bf.setMatrixAt(q,d.matrix);bf.setColorAt(q,cc.setHSL(.26+rnd(-.04,.05),rnd(.35,.5),rnd(.16,.26)));q++}
+bf.count=q;bf.frustumCulled=false;S.add(bf)}
+{const dg=mergeG([new T.CylinderGeometry(.12,.22,5.5,5).translate(0,2.75,0),new T.CylinderGeometry(.05,.09,2.2,4).rotateZ(.9).translate(.9,4.4,0),new T.CylinderGeometry(.04,.07,1.8,4).rotateZ(-.8).translate(-.7,3.6,.2),new T.CylinderGeometry(.04,.06,1.4,4).rotateX(.8).translate(0,5,.5)]);const N=70,dm=new T.InstancedMesh(dg,new T.MeshBasicMaterial({color:0x4a3b2e}),N),d=new T.Object3D();let k=0;for(let t=0;t<N*4&&k<N;t++){const x=rnd(-420,420),z=rnd(-420,420);if(!okp(x,z,3))continue;d.position.set(x,gh(x,z)-.2,z);d.rotation.set(0,rnd(0,6.3),rnd(-.08,.08));d.scale.setScalar(rnd(.9,1.8));d.updateMatrix();dm.setMatrixAt(k++,d.matrix)}dm.count=k;dm.frustumCulled=false;S.add(dm)}
 {const n=16,x0=-330,z0=-40,x1=330,z1=-160,ps=[];for(let i=0;i<=n;i++){const u=i/n,x=x0+(x1-x0)*u,z=z0+(z1-z0)*u;ps.push([x,z,gh(x,z)])}
-const yaw=Math.atan2(z1-z0,x1-x0),px=-Math.sin(yaw),pz=Math.cos(yaw),pg2=mergeG([new T.CylinderGeometry(.16,.22,9.5,6).translate(0,4.75,0),new T.BoxGeometry(.18,.18,3.4).translate(0,8.6,0),new T.BoxGeometry(.18,.18,2.4).translate(0,7,0)]),pm=new T.InstancedMesh(pg2,ink,n+1),d=new T.Object3D();
+const yaw=Math.atan2(z1-z0,x1-x0),px=-Math.sin(yaw),pz=Math.cos(yaw),pg2=mergeG([new T.CylinderGeometry(.16,.22,9.5,6).translate(0,4.75,0),new T.BoxGeometry(.18,.18,3.4).translate(0,8.6,0),new T.BoxGeometry(.18,.18,2.4).translate(0,7,0)]),pm=new T.InstancedMesh(pg2,new T.MeshBasicMaterial({color:0x3b3025}),n+1),d=new T.Object3D();
 ps.forEach((p,i)=>{d.position.set(p[0],p[2]-.2,p[1]);d.rotation.y=-yaw;d.updateMatrix();pm.setMatrixAt(i,d.matrix)});pm.frustumCulled=false;S.add(pm);
 const W=[];[[-1.6,8.6],[1.6,8.6],[-1.1,7],[1.1,7]].forEach(([o,h])=>{for(let i=0;i<n;i++){const A=ps[i],Bp=ps[i+1];for(let q=0;q<8;q++){const u0=q/8,u1=(q+1)/8,f=u=>[A[0]+(Bp[0]-A[0])*u+px*o,A[2]+(Bp[2]-A[2])*u+h-1.6*4*u*(1-u),A[1]+(Bp[1]-A[1])*u+pz*o];W.push(...f(u0),...f(u1))}}});
 const wg=new T.BufferGeometry();wg.setAttribute('position',new T.Float32BufferAttribute(W,3));const wl=new T.LineSegments(wg,LM);wl.frustumCulled=false;S.add(wl)}
 const road=pts=>{const Q=[];for(let i=0;i<pts.length-1;i++){const[ax,az]=pts[i],[bx,bz]=pts[i+1],len=Math.hypot(bx-ax,bz-az),n=Math.ceil(len/5),dx=(bx-ax)/len,dz=(bz-az)/len;for(let s=0;s<=n;s++)Q.push([ax+(bx-ax)*s/n,az+(bz-az)*s/n,dx,dz])}
-const L=[],P3=(x,z)=>[x,gh(x,z)+.12,z];for(let i=0;i<Q.length-1;i++){const a=Q[i],b=Q[i+1];if(!okp(a[0],a[1],2)||!okp(b[0],b[1],2))continue;[-3.2,3.2].forEach(o=>{L.push(...P3(a[0]-a[3]*o,a[1]+a[2]*o),...P3(b[0]-b[3]*o,b[1]+b[2]*o))});if(i%2==0)L.push(...P3(a[0],a[1]),...P3(b[0],b[1]))}
-const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(L,3));const l=new T.LineSegments(g,LM);l.frustumCulled=false;S.add(l)};
+const pos=[],col=[],ix=[],V=(x,z)=>[x,gh(x,z)+.14,z],E=[.36,.32,.21],Cn=[.56,.48,.35];let vi=0;
+for(let i=0;i<Q.length-1;i++){const a=Q[i],b=Q[i+1];if(!okp(a[0],a[1],2)||!okp(b[0],b[1],2))continue;const j=rnd(.92,1.06);
+[a,b].forEach(q=>{[-3.2,0,3.2].forEach((o,k)=>{pos.push(...V(q[0]-q[3]*o,q[1]+q[2]*o));const c=k==1?Cn:E;col.push(c[0]*j*.92,c[1]*j*.92,c[2]*j*.92)})});
+ix.push(vi,vi+1,vi+3,vi+1,vi+4,vi+3,vi+1,vi+2,vi+4,vi+2,vi+5,vi+4);vi+=6}
+if(!vi)return;const g=new T.BufferGeometry();g.setAttribute('position',new T.Float32BufferAttribute(pos,3));g.setAttribute('color',new T.Float32BufferAttribute(col,3));g.setIndex(ix);
+const m=new T.Mesh(g,new T.MeshBasicMaterial({vertexColors:true,side:T.DoubleSide,polygonOffset:true,polygonOffsetFactor:-2,polygonOffsetUnits:-2}));m.frustumCulled=false;S.add(m)};
 road([[0,130],[-70,100],[-130,50],[-190,-20]]);road([[0,130],[70,60],[130,-30],[190,-110]]);road([[0,130],[10,40],[30,-30],[30,-95],[10,-150],[-30,-210]]);
-const fw=new T.Group();fw.position.set(95,14+gh(95,45),45);fw.add(new T.Mesh(new T.TorusGeometry(12,.35,6,28),ink));for(let i=0;i<8;i++){const s=new T.Mesh(new T.CylinderGeometry(.12,.12,24,4),ink);s.rotation.z=i*Math.PI/4;fw.add(s);const g=new T.Mesh(new T.BoxGeometry(1.8,1.8,1.8),pap);g.position.set(Math.cos(i*Math.PI/4)*12,Math.sin(i*Math.PI/4)*12,0);g.add(new T.LineSegments(new T.EdgesGeometry(g.geometry),LM));fw.add(g)}S.add(fw);
-const leg=new T.Mesh(new T.CylinderGeometry(.3,.3,15,4),ink);leg.position.set(95,7+gh(95,45),45);S.add(leg);
-{const pg=(()=>{const p=[],ix=[];let o=0;[new T.ConeGeometry(2.6,3,7).translate(0,2.2,0),new T.ConeGeometry(2.1,2.8,7).translate(0,4.1,0),new T.ConeGeometry(1.5,2.6,7).translate(0,5.8,0),new T.CylinderGeometry(.25,.3,1.4,6).translate(0,.7,0)].forEach(g=>{const a=g.attributes.position.array;for(const v of a)p.push(v);g.index.array.forEach(i=>ix.push(i+o));o+=a.length/3});const m=new T.BufferGeometry();m.setAttribute('position',new T.Float32BufferAttribute(p,3));m.setIndex(ix);return m})();const N=480,cg=pg,tcol=new T.Color(),tf=new T.InstancedMesh(cg,new T.MeshLambertMaterial({color:0xffffff}),N),to=new T.InstancedMesh(cg,new T.MeshBasicMaterial({color:0x0f2412,side:T.BackSide}),N),d=new T.Object3D(),d2=new T.Object3D(),sh=new T.InstancedMesh(new T.CircleGeometry(1,10),new T.MeshBasicMaterial({color:0,transparent:true,opacity:.18,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-2}),N);d2.rotation.x=-Math.PI/2;for(let i=0;i<N;i++){let x,z;do{x=rnd(-520,520);z=rnd(-520,520)}while(Math.hypot(x,z-130)<20||B.some(b=>x>b.x0-4&&x<b.x1+4&&z>b.z0-4&&z<b.z1+4));const s=rnd(.8,1.6);d.position.set(x,gh(x,z)-.3,z);d.scale.setScalar(s);d.updateMatrix();tf.setMatrixAt(i,d.matrix);tf.setColorAt(i,tcol.setHSL(.35+rnd(-.03,.04),.38+rnd(0,.17),.2+rnd(0,.12)));d.scale.set(s*1.12,s*1.05,s*1.12);d.updateMatrix();to.setMatrixAt(i,d.matrix);d2.position.set(x,gh(x,z)+.08,z);d2.scale.setScalar(s*2.6);d2.updateMatrix();sh.setMatrixAt(i,d2.matrix)}tf.frustumCulled=to.frustumCulled=sh.frustumCulled=false;S.add(tf,to,sh)}
+const FRU=new T.MeshBasicMaterial({color:0x6b3a24}),GON=[0xc9a227,0x2f6a93,0xa43a2c].map(c=>new T.MeshBasicMaterial({color:c}));const fw=new T.Group();fw.position.set(95,14+gh(95,45),45);fw.add(new T.Mesh(new T.TorusGeometry(12,.35,6,28),FRU));for(let i=0;i<8;i++){const s=new T.Mesh(new T.CylinderGeometry(.12,.12,24,4),FRU);s.rotation.z=i*Math.PI/4;fw.add(s);const g=new T.Mesh(new T.BoxGeometry(1.8,1.8,1.8),GON[i%3]);g.position.set(Math.cos(i*Math.PI/4)*12,Math.sin(i*Math.PI/4)*12,0);g.add(new T.LineSegments(new T.EdgesGeometry(g.geometry),LM));fw.add(g)}S.add(fw);
+const leg=new T.Mesh(new T.CylinderGeometry(.3,.3,15,4),FRU);leg.position.set(95,7+gh(95,45),45);S.add(leg);
+{const pg=(()=>{const p=[],ix=[],cl=[],BC=[[.15,.31,.15],[.2,.41,.19],[.32,.58,.27],[.3,.19,.11]];let o=0;[new T.ConeGeometry(2.6,3,7).translate(0,2.2,0),new T.ConeGeometry(2.1,2.8,7).translate(0,4.1,0),new T.ConeGeometry(1.5,2.6,7).translate(0,5.8,0),new T.CylinderGeometry(.25,.3,1.4,6).translate(0,.7,0)].forEach((g,gi)=>{const a=g.attributes.position.array;g.computeBoundingBox();const y0=g.boundingBox.min.y,hh=g.boundingBox.max.y-y0||1;for(let k=0;k<a.length;k+=3){p.push(a[k],a[k+1],a[k+2]);const tt=(a[k+1]-y0)/hh,f=gi<3?.8+.4*tt:1;cl.push(BC[gi][0]*f,BC[gi][1]*f,BC[gi][2]*f)}g.index.array.forEach(i=>ix.push(i+o));o+=a.length/3});const m=new T.BufferGeometry();m.setAttribute('position',new T.Float32BufferAttribute(p,3));m.setAttribute('color',new T.Float32BufferAttribute(cl,3));m.setIndex(ix);m.computeVertexNormals();return m})();const N=480,cg=pg,tcol=new T.Color(),tf=new T.InstancedMesh(cg,new T.MeshLambertMaterial({color:0xffffff,vertexColors:true}),N),to=new T.InstancedMesh(cg,new T.MeshBasicMaterial({color:0x0f2412,side:T.BackSide}),N),d=new T.Object3D(),d2=new T.Object3D(),sh=new T.InstancedMesh(new T.CircleGeometry(1,10),new T.MeshBasicMaterial({color:0,transparent:true,opacity:.18,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-2}),N);d2.rotation.x=-Math.PI/2;for(let i=0;i<N;i++){let x,z;do{x=rnd(-520,520);z=rnd(-520,520)}while(Math.hypot(x,z-130)<20||B.some(b=>x>b.x0-4&&x<b.x1+4&&z>b.z0-4&&z<b.z1+4));const s=rnd(.8,1.6);d.position.set(x,gh(x,z)-.3,z);d.scale.setScalar(s);d.updateMatrix();tf.setMatrixAt(i,d.matrix);{const r=Math.random(),k=r<.5?[.92,1.08,.88]:r<.78?[.78,.98,.9]:r<.9?[1.15,1.08,.7]:r<.96?[1.55,.98,.55]:[1.45,1.25,.5];tf.setColorAt(i,tcol.setRGB(k[0]*rnd(.92,1.08),k[1]*rnd(.92,1.08),k[2]*rnd(.92,1.08)))}d.scale.set(s*1.12,s*1.05,s*1.12);d.updateMatrix();to.setMatrixAt(i,d.matrix);d2.position.set(x,gh(x,z)+.08,z);d2.scale.setScalar(s*2.6);d2.updateMatrix();sh.setMatrixAt(i,d2.matrix)}tf.frustumCulled=to.frustumCulled=sh.frustumCulled=false;S.add(tf,to,sh)}
 // ---------- STICKMAN ----------
 const camM=new T.MeshBasicMaterial({map:(()=>{const t=new T.CanvasTexture(cv(64,64,(g,w,h)=>{g.fillStyle='#fff';g.fillRect(0,0,w,h);for(let i=0;i<70;i++){g.fillStyle=Math.random()<.65?'#000':'#8a8a8a';g.fillRect(Math.floor(rnd(0,w)/4)*4,Math.floor(rnd(0,h)/4)*4,rnd(2,5)*4,rnd(1,3)*4)}}));t.magFilter=T.NearestFilter;t.wrapS=t.wrapT=T.RepeatWrapping;return t})()});
+const GCH={},GEC=new WeakMap(),G_=(k,...a)=>{const id=k+a.join();return GCH[id]||(GCH[id]=new T[k+'Geometry'](...a))},GE_=(g,a)=>{let e=GEC.get(g);if(!e){e=new T.EdgesGeometry(g,a);GEC.set(g,e)}return e};
 function stick(ty){ty=ty||'n';const g=new T.Group(),b=new T.Group();g.add(b);
-const L=(l,x,y)=>{const p=new T.Group(),m=new T.Mesh(new T.CylinderGeometry(.065,.055,l,6),ink);m.position.y=-l/2;p.add(m);p.position.set(x,y,0);b.add(p);return p};
-const t=new T.Mesh(new T.CylinderGeometry(.12,.09,.72,8),camM);t.position.y=1.15;const tO=new T.Mesh(t.geometry,oln);tO.scale.setScalar(1.12);t.add(tO);b.add(t);const bl=new T.Mesh(new T.CylinderGeometry(.095,.095,.08,8),ink);bl.position.y=.82;b.add(bl);
-const h=new T.Mesh(new T.SphereGeometry(.17,10,8),pap);h.position.y=1.74;h.scale.setScalar(1.14);const ho=new T.Mesh(h.geometry,oln);ho.scale.setScalar(1.2);h.add(ho);b.add(h);
-const fa=(g,x,y,z,m,rz,rx)=>{const o=new T.Mesh(g,m||ink);o.position.set(x,y,z);o.rotation.z=rz||0;o.rotation.x=rx||0;h.add(o);return o},bd=Math.random()<.55,E=new T.SphereGeometry(.032,8,6);
-[-1,1].forEach(s=>{fa(E,s*.06,.03,.152).scale.set(1,1.25,.55);fa(new T.BoxGeometry(.09,.024,.02),s*.063,.058,.145,0,s*.28);const ear=fa(new T.SphereGeometry(.035,8,6),s*.168,0,0,pap);ear.scale.set(.45,1,.75);const eo=new T.Mesh(ear.geometry,oln);eo.scale.setScalar(1.18);ear.add(eo);fa(new T.CylinderGeometry(.011,.011,.2,4),s*.145,-.04,.02,0,-s*.25)});
-fa(new T.ConeGeometry(.032,.075,6),0,-.008,.168,0,0,Math.PI/2);fa(new T.BoxGeometry(.085,.022,.014),0,-.075,bd?.165:.15,bd?pap:0);
-if(bd)h.add(new T.Mesh(new T.SphereGeometry(.174,10,6,Math.PI/2-1.1,2.2,Math.PI*.58,Math.PI*.24),ink));
-const hm=fa(new T.SphereGeometry(.205,14,8,0,Math.PI*2,0,Math.PI*.42),0,.02,0);hm.scale.set(1,1.05,1.1);
-fa(new T.CylinderGeometry(.222,.222,.018,14),0,.072,0).scale.z=1.1;
-const tr=fa(new T.TorusGeometry(.19,.014,6,16),0,.11,0,pap,0,Math.PI/2);tr.scale.set(1,1.1,1);fa(new T.BoxGeometry(.075,.045,.012),0,.115,.205,pap);
+const L=(l,x,y)=>{const p=new T.Group(),m=new T.Mesh(G_('Box',.15,l,.17),camM);m.position.y=-l/2;const mo=new T.Mesh(m.geometry,oln);mo.scale.set(1.16,1.02,1.14);m.add(mo);p.add(m);p.position.set(x,y,0);b.add(p);return p};
+const t=new T.Mesh(G_('Box',.34,.72,.21),camM);t.position.y=1.15;const tO=new T.Mesh(t.geometry,oln);tO.scale.set(1.1,1.05,1.14);t.add(tO);b.add(t);const bl=new T.Mesh(G_('Box',.36,.11,.23),ink);bl.position.y=.84;b.add(bl);
+const h=new T.Mesh(G_('Cylinder',.165,.17,.3,18),pap);h.position.y=1.74;h.scale.setScalar(1.14);const ho=new T.Mesh(h.geometry,oln);ho.scale.setScalar(1.2);h.add(ho);b.add(h);
+const fa=(g,x,y,z,m,rz,rx)=>{const o=new T.Mesh(g,m||ink);o.position.set(x,y,z);o.rotation.z=rz||0;o.rotation.x=rx||0;h.add(o);return o},bd=Math.random()<.55,E=G_('Sphere',.032,8,6);
+[-1,1].forEach(s=>{fa(E,s*.06,.03,.152).scale.set(1,1.25,.55);fa(G_('Box',.09,.024,.02),s*.063,.058,.145,0,s*.28);const ear=fa(G_('Sphere',.035,8,6),s*.168,0,0,pap);ear.scale.set(.45,1,.75);const eo=new T.Mesh(ear.geometry,oln);eo.scale.setScalar(1.18);ear.add(eo);fa(G_('Cylinder',.011,.011,.2,4),s*.145,-.04,.02,0,-s*.25)});
+fa(G_('Cone',.032,.075,6),0,-.008,.168,0,0,Math.PI/2);fa(G_('Box',.085,.022,.014),0,-.075,bd?.165:.15,bd?pap:0);
+if(bd)h.add(new T.Mesh(G_('Sphere',.174,10,6,Math.PI/2-1.1,2.2,Math.PI*.58,Math.PI*.24),ink));
+const hm=fa(G_('Sphere',.205,14,8,0,Math.PI*2,0,Math.PI*.42),0,.02,0);hm.scale.set(1,1.05,1.1);
+fa(G_('Cylinder',.222,.222,.018,14),0,.072,0).scale.z=1.1;fa(G_('Cylinder',.065,.065,.06,12),0,.27,0);
+const tr=fa(G_('Torus',.19,.014,6,16),0,.11,0,pap,0,Math.PI/2);tr.scale.set(1,1.1,1);fa(G_('Box',.075,.045,.012),0,.115,.205,pap);
 const ll=L(.8,-.09,.8),rl=L(.8,.09,.8);
-[ll,rl].forEach(l=>{const bt=new T.Mesh(new T.BoxGeometry(.09,.07,.17),ink);bt.position.set(0,-.78,.04);l.add(bt);const kp=new T.Mesh(new T.SphereGeometry(.06,8,6),ink);kp.position.set(0,-.4,.03);l.add(kp)});
-const rp=(g,x,y,z,m)=>{const o=new T.Mesh(g,m||ink);o.position.set(x,y,z);o.add(new T.LineSegments(new T.EdgesGeometry(g,30),WL));b.add(o);return o};
-const vs=new T.Mesh(new T.CylinderGeometry(.128,.115,.34,8),ink);vs.position.y=1.3;b.add(vs);for(let i=0;i<3;i++)rp(new T.BoxGeometry(.06,.075,.04),(i-1)*.065,1.26,.13);
-const V=(x,y,z)=>new T.Vector3(x,y,z),sg=(a,c,r,m)=>{const v=c.clone().sub(a),l=v.length(),o=new T.Mesh(new T.CylinderGeometry(r,r*.88,l,6),m||ink);o.position.copy(a).addScaledVector(v,.5);o.quaternion.setFromUnitVectors(V(0,1,0),v.normalize());b.add(o)},hnd=p=>{const o=new T.Mesh(new T.SphereGeometry(.05,8,6),ink);o.position.copy(p);o.scale.set(1,.9,1.25);b.add(o);const k=new T.Mesh(new T.BoxGeometry(.04,.01,.045),pap);k.position.set(p.x,p.y+.04,p.z);b.add(k)};
-const SR=V(.14,1.46,0),ER=V(.2,1.24,.08),HR=V(.1,1.3,.18),SL=V(-.14,1.46,0),EL=V(-.12,1.24,.2),HL=V(.09,1.325,.58);
-sg(SR,ER,.05,camM);sg(ER,HR,.042,ink);sg(SL,EL,.05,camM);sg(EL,HL,.042,ink);hnd(HR);hnd(HL);
-rp(new T.BoxGeometry(.06,.09,.34),.1,1.4,.28);rp(new T.BoxGeometry(.055,.11,.3),.1,1.4,-.05);rp(new T.BoxGeometry(.07,.075,.34),.1,1.39,.55);rp(new T.BoxGeometry(.04,.15,.07),.1,1.28,.3);rp(new T.BoxGeometry(.04,.09,.05),.1,1.31,.17);rp(new T.BoxGeometry(.045,.05,.2),.1,1.47,.3);
-const bz=rp(new T.CylinderGeometry(.014,.014,.62,6),.1,1.41,.85);bz.rotation.x=Math.PI/2;const mz=rp(new T.CylinderGeometry(.022,.022,.08,6),.1,1.41,1.18);mz.rotation.x=Math.PI/2;
-if(ty=='h'){g.scale.setScalar(1.06);rp(new T.BoxGeometry(.24,.28,.07),0,1.3,.14);[-1,1].forEach(q=>{const sp=new T.Mesh(new T.SphereGeometry(.07,8,6),ink);sp.position.set(q*.15,1.5,0);b.add(sp)})}
-if(ty=='o'){[-1,1].forEach(q=>rp(new T.BoxGeometry(.08,.02,.12),q*.15,1.51,0,pap));rp(new T.CylinderGeometry(.008,.008,.55,4),-.08,1.62,-.16);rp(new T.BoxGeometry(.08,.1,.04),-.08,1.36,-.14)}
-if(ty=='s'){const lb=rp(new T.CylinderGeometry(.012,.012,.5,6),.1,1.41,1.35);lb.rotation.x=Math.PI/2;rp(new T.CylinderGeometry(.03,.03,.3,8),.1,1.52,.3).rotation.x=Math.PI/2}
+[ll,rl].forEach(l=>{const bt=new T.Mesh(G_('Box',.16,.12,.26),ink);bt.position.set(0,-.76,.05);l.add(bt);const kp=new T.Mesh(G_('Box',.17,.09,.19),ink);kp.position.set(0,-.4,0);l.add(kp)});
+const rp=(g,x,y,z,m)=>{const o=new T.Mesh(g,m||ink);o.position.set(x,y,z);o.add(new T.LineSegments(GE_(g,30),WL));b.add(o);return o};
+const vs=new T.Mesh(G_('Box',.37,.36,.24),ink);vs.position.y=1.3;b.add(vs);for(let i=0;i<3;i++)rp(G_('Box',.06,.075,.04),(i-1)*.065,1.26,.13);
+const V=(x,y,z)=>new T.Vector3(x,y,z),sg=(a,c,r,m)=>{const v=c.clone().sub(a),l=v.length(),o=new T.Mesh(G_('Cylinder',r,r*.88,l,6),m||ink);o.position.copy(a).addScaledVector(v,.5);o.quaternion.setFromUnitVectors(V(0,1,0),v.normalize());b.add(o)},hnd=p=>{const o=new T.Mesh(G_('Cylinder',.052,.052,.085,10),ink);o.position.copy(p);o.rotation.z=Math.PI/2;b.add(o);const k=new T.Mesh(G_('Box',.04,.01,.045),pap);k.position.set(p.x,p.y+.04,p.z);b.add(k)};
+const SR=V(.21,1.46,0),ER=V(.2,1.24,.08),HR=V(.1,1.3,.18),SL=V(-.21,1.46,0),EL=V(-.12,1.24,.2),HL=V(.09,1.325,.58);
+sg(SR,ER,.07,camM);sg(ER,HR,.06,ink);sg(SL,EL,.07,camM);sg(EL,HL,.06,ink);hnd(HR);hnd(HL);
+rp(G_('Box',.06,.09,.34),.1,1.4,.28);rp(G_('Box',.055,.11,.3),.1,1.4,-.05);rp(G_('Box',.07,.075,.34),.1,1.39,.55);rp(G_('Box',.04,.15,.07),.1,1.28,.3);rp(G_('Box',.04,.09,.05),.1,1.31,.17);rp(G_('Box',.045,.05,.2),.1,1.47,.3);
+const bz=rp(G_('Cylinder',.014,.014,.62,6),.1,1.41,.85);bz.rotation.x=Math.PI/2;const mz=rp(G_('Cylinder',.022,.022,.08,6),.1,1.41,1.18);mz.rotation.x=Math.PI/2;
+if(ty=='h'){g.scale.setScalar(1.06);rp(G_('Box',.24,.28,.07),0,1.3,.14);[-1,1].forEach(q=>{const sp=new T.Mesh(G_('Sphere',.07,8,6),ink);sp.position.set(q*.15,1.5,0);b.add(sp)})}
+if(ty=='o'){[-1,1].forEach(q=>rp(G_('Box',.08,.02,.12),q*.15,1.51,0,pap));rp(G_('Cylinder',.008,.008,.55,4),-.08,1.62,-.16);rp(G_('Box',.08,.1,.04),-.08,1.36,-.14)}
+if(ty=='s'){const lb=rp(G_('Cylinder',.012,.012,.5,6),.1,1.41,1.35);lb.rotation.x=Math.PI/2;rp(G_('Cylinder',.03,.03,.3,8),.1,1.52,.3).rotation.x=Math.PI/2}
 const gl=new T.Sprite(glM);gl.scale.set(ty=='s'?2.4:1.2,ty=='s'?2.4:1.2,1);gl.position.set(.1,1.47,1.2);gl.visible=false;b.add(gl);const fine=[],edges=[];g.traverse(o=>{if(o.isLineSegments)edges.push(o);else if(o.isMesh&&o.geometry){o.geometry.computeBoundingSphere();if(o.geometry.boundingSphere.radius<.075)fine.push(o)}});return{g,b,ll,rl,gl,fine,edges}}
 // blood
 const bt=new T.CanvasTexture(cv(128,128,g=>{g.fillStyle=g.strokeStyle='#c1121f';g.beginPath();g.arc(64,64,24,0,7);g.fill();for(let i=0;i<14;i++){const a=rnd(0,6.3),l=rnd(26,52);g.lineWidth=rnd(2,6);g.beginPath();g.moveTo(64,64);g.lineTo(64+Math.cos(a)*l,64+Math.sin(a)*l);g.stroke();g.beginPath();g.arc(64+Math.cos(a)*(l+8),64+Math.sin(a)*(l+8),rnd(2,5),0,7);g.fill()}}));
@@ -328,48 +402,81 @@ function amb(){const w=AC.createBufferSource(),wf=AC.createBiquadFilter(),wg=AC.
 const lf=AC.createOscillator(),lg=AC.createGain();lf.frequency.value=.1;lg.gain.value=.04;lf.connect(lg);lg.connect(wg.gain);lf.start();
 (function l(){setTimeout(()=>{if(AC){const r=Math.random();if(r<.35)osc('sine',48,32,AC.currentTime,5,.25,mg,2);else if(r<.6){if(!hl){hl=1;heli();setTimeout(()=>hl=0,16000)}}else sE(150,rnd(-1,1))}l()},rnd(9000,18000))})()}
 const sHit=A(t=>osc('triangle',1500,900,t,.08,.25)),sHurt=A(t=>{osc('sine',100,40,t,.25,.6);nz(.15,500,150,.3,'lowpass')}),sGun=A((t,v=.6)=>{nz(.22,2800,250,v,'lowpass',1);osc('sine',85,35,t,.3,v*.8)}),sGeiger=()=>nz(.012,6000,6000,.12,'highpass'),sHuff=A(t=>nzAt(t,.3,1100,450,.07,'lowpass',0,1)),sBeat=A(t=>{osc('sine',62,40,t,.14,.3);osc('sine',54,38,t+.17,.12,.2)}),sWhiz=A(t=>nz(.2,3200,800,.1,'bandpass')),sStep=A((t,k,v)=>{v=v||1;const pn=AC.createStereoPanner?AC.createStereoPanner():null,dst=pn||mg,j=rnd(.88,1.14);if(pn){pn.pan.value=(stp++%2?1:-1)*.15;pn.connect(mg)}
-if(k==0){nzAt(t,.05,2300*j,900,.13*v,'bandpass',dst);osc('sine',115*j,65,t,.07,.12*v,dst);nzAt(t+.07,.025,4200,2500,.05*v,'highpass',dst);osc('sine',150,90,t+.07,.04,.04*v,dst)}
-else if(k==1){nzAt(t,.12,1400*j,450,.1*v,'lowpass',dst);osc('sine',78*j,50,t,.09,.1*v,dst);nzAt(t+.05,.1,3000,1500,.03*v,'highpass',dst)}
-else{for(let i=0;i<4;i++)nzAt(t+i*.022,.035,rnd(1400,2600),rnd(500,900),.07*v,'bandpass',dst);osc('sine',92*j,55,t,.08,.1*v,dst)}});
-function music(){const sp=60/82/4,m=x=>440*Math.pow(2,(x-69)/12),ch=[[57,60,64,67,71],[53,57,60,64,67],[50,53,57,60,64],[52,56,59,62,65]];let n=0,nt=AC.currentTime+.1;dl.delayTime.value=sp*3;
+if(k==0){nzAt(t,.06,1800*j,500,.09*v,'lowpass',dst);nzAt(t,.03,3500,1800,.015*v,'bandpass',dst)}
+else if(k==1){nzAt(t,.1,1200*j,350,.08*v,'lowpass',dst)}
+else{nzAt(t,.16,2200*j,700,.03*v,'bandpass',dst);nzAt(t,.08,520*j,180,.07*v,'lowpass',dst)}});
+function music(){const be=60/68,sp=be/2,m=x=>440*Math.pow(2,(x-69)/12);let n=0,nt=AC.currentTime+.1;dl.delayTime.value=be*.75;
 const mb=AC.createGain();mb.gain.value=.7;mb.connect(mg);mb.connect(rv);MB=mb;
-const pf=AC.createBiquadFilter();pf.type='lowpass';pf.frequency.value=700;pf.Q.value=.7;const pg=AC.createGain();pg.gain.value=.5;pf.connect(pg);pg.connect(mb);
-const lf=AC.createOscillator(),lg=AC.createGain();lf.frequency.value=.03;lg.gain.value=180;lf.connect(lg);lg.connect(pf.frequency);lf.start();
-const eb=AC.createGain(),ed=AC.createGain();ed.gain.value=.25;eb.connect(mb);eb.connect(ed);ed.connect(dl);
-const lb=AC.createGain();lb.connect(mb);lb.connect(dl);
-const bf=AC.createBiquadFilter();bf.type='lowpass';bf.frequency.value=380;bf.connect(mb);
-const fe=(f,t,v)=>{const c=AC.createOscillator(),md=AC.createOscillator(),mo=AC.createGain(),g=AC.createGain();c.type=md.type='sine';c.frequency.value=f;md.frequency.value=f;mo.gain.setValueAtTime(f*1.6,t);mo.gain.exponentialRampToValueAtTime(f*.12,t+.5);md.connect(mo);mo.connect(c.frequency);g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(v,t+.005);g.gain.exponentialRampToValueAtTime(.0001,t+2.4);c.connect(g);g.connect(eb);c.start(t);md.start(t);c.stop(t+2.5);md.stop(t+2.5);osc('sine',f*14,0,t,.08,v*.05,eb,.002)};
-const pad=(f,t,d,v)=>[-6,0,6].forEach(cn=>{const o=AC.createOscillator(),g=AC.createGain();o.type='sawtooth';o.frequency.value=f;o.detune.value=cn;g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(v,t+1.2);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(pf);o.start(t);o.stop(t+d+.1)});
-const kick=t=>{osc('sine',115,42,t,.32,.34,mb,.002);osc('sine',58,40,t,.4,.16,mb,.004)};
-const snare=t=>{osc('triangle',200,130,t,.14,.07,mb,.002);nzAt(t,.17,2600,800,.1,'bandpass',mb);nzAt(t,.06,1400,700,.08,'lowpass',mb)};
-const hat=(t,v)=>nzAt(t,.045,8000,6000,v,'highpass',mb);
-setInterval(()=>{while(nt<AC.currentTime+.25){const bar=(n>>4)&3,c=ch[bar],s=n&15,tt=nt+((n&1)?sp*.15:0),r=c[0]-12;
-if(s==0){c.slice(0,4).forEach((x,j)=>fe(m(x),tt+j*.04,.04));c.forEach(x=>pad(m(x),tt,18*sp,.008))}
-if(s==10)c.slice(1,4).forEach((x,j)=>fe(m(x),tt+j*.03,.022));
-if(s==0)osc('sine',m(r),0,tt,sp*6,.2,bf,.015);if(s==6)osc('sine',m(r+12),0,tt,sp*3,.1,bf,.015);if(s==10)osc('sine',m(r+7),0,tt,sp*4,.13,bf,.015);if(s==14&&bar%2)osc('sine',m(r+10),0,tt,sp*2,.08,bf,.015);
-if(s==0||s==10||(s==6&&bar%2))kick(tt);
-if(s==4||s==12)snare(tt);
-if(s%4==0)hat(tt,.02+tense*.01);if(s%4==3)hat(tt,.011+tense*.01);
-if(s==12&&bar%2==0&&Math.random()<.5){const f=m(c[Math.floor(Math.random()*5)]+24);osc('triangle',f,0,tt,1,.02,lb,.03)}
-pf.frequency.value=700+tense*500;tense=Math.max(0,tense-sp*.04);nt+=sp;n++}},50)}
+const hb=AC.createGain(),hd=AC.createGain(),db=AC.createGain();hb.connect(mb);hd.gain.value=.2;hb.connect(hd);hd.connect(dl);db.connect(mb);
+const CHD={Dm:[50,57,62,65],Bb:[46,53,58,62],F:[53,57,60,65],C:[48,55,60,64],Gm:[43,55,58,62],A:[45,52,57,61]},
+PR=['Dm','Dm','Bb','F','C','C','Gm','A','Dm','Bb','F','C','Gm','Dm','A','Dm'],
+ML=[[[0,62,4],[4,65,2],[6,69,2]],[[0,74,6],[6,72,2]],[[0,70,4],[4,69,2],[6,67,2]],[[0,65,6],[6,67,2]],[[0,64,4],[4,67,2],[6,72,2]],[[0,69,6],[6,67,2]],[[0,67,4],[4,70,2],[6,74,2]],[[0,73,6],[6,74,2]],
+[[0,74,4],[4,77,2],[6,76,2]],[[0,74,6],[6,72,2]],[[0,72,4],[4,69,2],[6,72,2]],[[0,76,6],[6,74,2]],[[0,70,4],[4,74,2],[6,72,2]],[[0,69,6],[6,65,2]],[[0,64,4],[4,61,2],[6,64,2]],[[0,62,8]]];
+// brass voice: two detuned saws + square, swelling filter, soft vibrato
+const horn=(f,t,d,v,dst,br)=>{const lp=AC.createBiquadFilter(),g=AC.createGain(),lf=AC.createOscillator(),lg=AC.createGain();lp.type='lowpass';lp.Q.value=.8;
+lp.frequency.setValueAtTime(f*1.2,t);lp.frequency.linearRampToValueAtTime(f*(2.2+br*1.5),t+.22);lp.frequency.linearRampToValueAtTime(f*2.2,t+d);
+g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(v,t+.2);g.gain.setValueAtTime(v,t+Math.max(.21,d-.35));g.gain.exponentialRampToValueAtTime(.0001,t+d+.25);
+lf.frequency.value=5.2;lg.gain.setValueAtTime(0,t);lg.gain.linearRampToValueAtTime(6,t+Math.min(d,.9));lf.connect(lg);lf.start(t);lf.stop(t+d+.3);
+[-6,6].forEach(cn=>{const o=AC.createOscillator();o.type='sawtooth';o.frequency.value=f;o.detune.value=cn;lg.connect(o.detune);o.connect(lp);o.start(t);o.stop(t+d+.3)});
+const o2=AC.createOscillator(),g2=AC.createGain();o2.type='square';o2.frequency.value=f;g2.gain.value=.35;lg.connect(o2.detune);o2.connect(g2);g2.connect(lp);o2.start(t);o2.stop(t+d+.3);lp.connect(g);g.connect(dst)};
+// war drums
+const taiko=(t,v,f0)=>{osc('sine',f0,f0*.42,t,.55,.5*v,db,.003);osc('sine',f0*.5,f0*.3,t,.7,.3*v,db,.004);nzAt(t,.09,900,200,.12*v,'lowpass',db);nzAt(t,.5,300,70,.07*v,'lowpass',db,1)};
+const tom=(t,v)=>{osc('sine',130,70,t,.3,.28*v,db,.002);nzAt(t,.06,1800,500,.06*v,'bandpass',db)};
+const snr=(t,v)=>{nzAt(t,.14,3200,900,.07*v,'bandpass',db);nzAt(t,.05,1800,800,.05*v,'highpass',db);osc('triangle',210,150,t,.09,.04*v,db,.002)};
+// calm war ambience bed: low drone + distant rumbles
+{const d1=AC.createOscillator(),d2=AC.createOscillator(),dg=AC.createGain(),df=AC.createBiquadFilter(),dlf=AC.createOscillator(),dlg=AC.createGain();d1.type='sawtooth';d2.type='sine';d1.frequency.value=m(26);d2.frequency.value=m(33);df.type='lowpass';df.frequency.value=140;dg.gain.value=.03;d1.connect(df);d2.connect(df);df.connect(dg);dg.connect(mb);d1.start();d2.start();dlf.frequency.value=.07;dlg.gain.value=.012;dlf.connect(dlg);dlg.connect(dg.gain);dlf.start();
+(function rb(){setTimeout(()=>{if(AC){const t=AC.currentTime;nzAt(t,3,140,40,.16,'lowpass',mb,1);osc('sine',46,30,t,3.2,.14,mb,.4)}rb()},rnd(7000,15000))})()}
+setInterval(()=>{while(nt<AC.currentTime+.25){const bar=(n>>3)&15,s=n&7,c=CHD[PR[bar]],tt=nt;
+if(s==0){[1,2,3].forEach((k,j)=>horn(m(c[k]),tt+j*.03,sp*8+.1,.018,hb,tense));horn(m(c[0]-12),tt,sp*8+.15,.055,hb,0);if(bar%8==0&&n>0)nzAt(tt,2.6,6500,2500,.05,'highpass',mb,1)}
+ML[bar].forEach(([st,nn,ln])=>{if(st==s)horn(m(nn),tt,ln*sp-.04,.042,hb,tense+.3)});
+if(s==0)taiko(tt,1,70);if(s==4)taiko(tt,.55,62);if(bar%4==3&&s>=6)taiko(tt,.45,66);
+if(s==3||s==7)tom(tt,.5);
+if(s==2||s==6){snr(tt-.045,.35);snr(tt,.7)}
+if(bar%8==7&&s>=4){const rv2=.25+(s-4)*.12;snr(tt,rv2);snr(tt+sp/2,rv2+.06)}
+tense=Math.max(0,tense-sp*.04);nt+=sp;n++}},50)}
 // ---------- GAME ----------
 const P={},enemies=[],corpses=[],BL=[];let go=0,last=0,kick=0,hold=0,jx=0,jy=0,swx=0,swy=0,spT=0,bob=0,Wx=0,Wz=0,stepD=0,hbT=0,tense=0,cro=0,stp=0,TS=1,hudT=0,vsx=0,vsy=0,msgT,hpv=new T.Vector3();
 const K={};
 const WL=new T.LineBasicMaterial({color:0xbdbdbd,transparent:true,opacity:.45}),gm=new T.MeshBasicMaterial({color:0x2b2b2b}),vm=new T.Group(),H=Math.PI/2,vmA=new T.MeshLambertMaterial({color:0x303030}),vmB=new T.MeshLambertMaterial({color:0x151515}),vmC=new T.MeshLambertMaterial({color:0x6b6b6b});
 const part=(g,x,y,z,m,rx)=>{const o=new T.Mesh(g,m===gm?vmA:m===pap?vmC:m||vmB);o.position.set(x,y,z);o.rotation.x=rx||0;o.add(new T.LineSegments(new T.EdgesGeometry(g,30),WL));vm.add(o);return o},BX=(w,h,d)=>new T.BoxGeometry(w,h,d),CY=(r,r2,l)=>new T.CylinderGeometry(r,r2,l,10);
 const vmS=new T.MeshLambertMaterial({map:(()=>{const t=new T.CanvasTexture(cv(64,64,(g,w,h)=>{g.fillStyle='#3a3a3a';g.fillRect(0,0,w,h);for(let i=0;i<500;i++){const v=Math.round(58+rnd(-18,18));g.fillStyle='rgb('+v+','+v+','+v+')';g.fillRect(rnd(0,w),rnd(0,h),1,1)}}));t.wrapS=t.wrapT=T.RepeatWrapping;return t})()});
-part(CY(.014,.016,.9),0,0,-.62,0,H);part(CY(.02,.02,.3),0,0,-.3,vmS,H);for(let i=0;i<6;i++)part(CY(.0185,.0185,.012),0,0,-.5-i*.09,gm,H);
-part(CY(.026,.024,.14),0,0,-1.12,gm,H);[-1,1].forEach(q=>{for(let i=0;i<3;i++)part(BX(.004,.014,.02),q*.026,0,-1.09-i*.035,0)});part(CY(.03,.03,.012),0,0,-1.2,pap,H);
-part(BX(.054,.078,.46),0,-.012,-.1,vmS);part(BX(.062,.072,.5),0,-.03,-.45,vmS);for(let i=0;i<5;i++)[-1,1].forEach(q=>part(BX(.004,.012,.04),q*.0315,-.03,-.24-i*.08,0));
-part(BX(.05,.1,.28),0,-.045,.22,vmS);part(BX(.046,.032,.15),0,.022,.22,pap);part(BX(.058,.125,.028),0,-.05,.37,0);
-part(BX(.04,.1,.05),0,-.105,.07,vmS,.3);part(BX(.036,.12,.07),0,-.11,-.1,0);part(BX(.01,.03,.09),0,-.07,-.02,0);
-part(BX(.03,.01,.5),0,.03,-.12,gm);for(let i=0;i<9;i++)part(BX(.034,.006,.012),0,.036,-.34+i*.055,0);
-const bh=part(CY(.012,.012,.07),.05,.01,-.05,gm);bh.rotation.z=H;const bk=part(new T.SphereGeometry(.02,8,6),.085,.01,-.05,gm);part(CY(.016,.016,.09),0,.012,.14,gm,H);
-part(CY(.03,.03,.34),0,.078,-.12,0,H);part(CY(.05,.04,.1),0,.078,-.33,gm,H);part(CY(.054,.054,.06),0,.078,-.41,0,H);part(CY(.046,.046,.004),0,.078,-.442,pap,H);part(CY(.038,.032,.06),0,.078,.1,0,H);part(CY(.036,.036,.03),0,.078,-.02,gm,H);part(BX(.003,.002,.03),0,.114,-.02,pap);
-[-.2,-.02].forEach(z=>{part(CY(.037,.037,.02),0,.078,z,gm,H);part(BX(.05,.026,.05),0,.04,z,gm);[-1,1].forEach(q=>{part(CY(.006,.006,.012),q*.036,.062,z,gm).rotation.z=H})});
-part(CY(.014,.014,.05),0,.12,-.12,gm);part(CY(.016,.016,.012),0,.148,-.12,pap);part(CY(.014,.014,.05),.058,.078,-.12,gm).rotation.z=H;part(CY(.012,.012,.03),-.052,.078,-.12,gm).rotation.z=H;
-part(BX(.06,.015,.03),0,-.07,-.55,0);part(CY(.006,.006,.3),-.03,-.075,-.7,0,H+.12);part(CY(.006,.006,.3),.03,-.075,-.7,0,H+.12);
-part(CY(.006,.006,.03),-.034,-.04,-.62,gm);part(CY(.006,.006,.03),-.03,-.06,.34,gm);
+const qM=(c,sp,sh,x)=>new T.MeshPhongMaterial(Object.assign({color:c,specular:sp,shininess:sh},x||{})),
+qSt=qM(0x1c1f22,0x5a6068,70),qBk=qM(0x0f1011,0x303336,40),qAl=qM(0x17191c,0x4a4f55,55),qAd=qM(0x17191c,0x4a4f55,55,{side:T.DoubleSide}),qBr=qM(0x26292c,0x70767c,90),qRb=qM(0x0a0a0a,0x101010,8),qGr=qM(0x2a1c44,0xffffff,200,{emissive:0x0a0612}),qTk=new T.MeshBasicMaterial({color:0x050505}),qWh=new T.MeshBasicMaterial({color:0xe4e4e4}),
+qSk=new T.MeshPhongMaterial({map:(()=>{const t=new T.CanvasTexture(cv(64,64,(g,w,h)=>{g.fillStyle='#343a30';g.fillRect(0,0,w,h);for(let i=0;i<700;i++){const v=Math.round(52+rnd(-16,16));g.fillStyle='rgb('+(v-4)+','+(v+2)+','+(v-8)+')';g.fillRect(rnd(0,w),rnd(0,h),1.5,1.5)}}));t.wrapS=t.wrapT=T.RepeatWrapping;return t})(),specular:0x1a1a1a,shininess:12}),
+qZ=(r,r2,l,sg)=>new T.CylinderGeometry(r,r2,l,sg||20),
+qp=(g,x,y,z,m,rx,rz)=>{const o=new T.Mesh(g,m);o.position.set(x,y,z);o.rotation.x=rx||0;o.rotation.z=rz||0;vm.add(o);return o};
+// heavy fluted barrel + muzzle brake
+qp(qZ(.0165,.0155,.74),0,0,-.67,qSt,H);qp(qZ(.021,.021,.03),0,0,-.3,qSt,H);
+for(let k=0;k<6;k++){const a=k*Math.PI/3;qp(new T.CylinderGeometry(.0022,.0022,.28,5),Math.cos(a)*.0158,Math.sin(a)*.0158,-.86,qBk,H)}
+qp(qZ(.0245,.0245,.11),0,0,-1.095,qBr,H);qp(qZ(.0258,.0258,.012),0,0,-1.157,qSt,H);qp(qZ(.0258,.0258,.012),0,0,-1.04,qSt,H);
+[-1.07,-1.095,-1.12].forEach(z=>{[-1,1].forEach(q=>qp(new T.BoxGeometry(.005,.02,.012),q*.0245,0,z,qTk));qp(new T.BoxGeometry(.02,.005,.012),0,.0245,z,qTk)});
+// free-float handguard with slots, top rail and rail ticks
+qp(new T.CylinderGeometry(.034,.034,.4,8),0,-.004,-.51,qAl,H);
+for(let z=-.37;z>-.7;z-=.045)[-1,1].forEach(q=>qp(new T.BoxGeometry(.003,.016,.028),q*.0325,-.004,z,qTk));
+qp(new T.BoxGeometry(.024,.008,.64),0,.034,-.39,qAl);
+{const ts=[];for(let z=-.08;z>-.7;z-=.022)ts.push(new T.BoxGeometry(.026,.0088,.0075).translate(0,.034,z));vm.add(new T.Mesh(mergeG(ts),qTk))}
+// action, bolt shroud, ejection port, chassis, stock, magazine, grip, trigger
+qp(qZ(.0255,.0255,.24),0,0,-.15,qSt,H);qp(qZ(.021,.021,.11),0,.002,.02,qSt,H);qp(qZ(.011,.011,.04),0,.002,.085,qBr,H);
+qp(new T.BoxGeometry(.006,.02,.075),.0248,.01,-.11,qTk);
+qp(new T.BoxGeometry(.05,.04,.3),0,-.03,-.13,qAl);qp(new T.BoxGeometry(.045,.06,.3),0,-.02,.14,qSk);
+qp(new T.BoxGeometry(.034,.12,.07),0,-.1,-.105,qBk,-.1);qp(new T.BoxGeometry(.04,.1,.05),0,-.105,.045,qRb,.3);
+qp(new T.BoxGeometry(.006,.026,.01),0,-.06,-.03,qBr);qp(new T.BoxGeometry(.008,.006,.085),0,-.078,-.01,qAl);
+// bolt handle + knob (positions are animated in cam())
+const bh=qp(new T.CylinderGeometry(.0085,.0085,.07,12),.05,.01,-.05,qSt,0,H),bk=qp(new T.SphereGeometry(.02,16,12),.085,.01,-.05,qSt);bk.scale.set(.95,.8,.95);
+// scope: rings, 30mm tube, ocular, power ring, turrets, objective bell, sunshade
+const SY=.0865;
+[-.09,-.25].forEach(z=>{qp(qZ(.023,.023,.03),0,SY,z,qBk,H);qp(new T.BoxGeometry(.04,.03,.032),0,.0505,z,qBk);[-1,1].forEach(q=>qp(new T.CylinderGeometry(.0045,.0045,.012,8),q*.0265,SY+.008,z,qSt,0,H))});
+qp(qZ(.0155,.0155,.36),0,SY,-.17,qAl,H);
+qp(new T.CylinderGeometry(.0245,.0155,.07,24),0,SY,.045,qAl,H);qp(qZ(.0265,.0265,.012),0,SY,.082,qRb,H);qp(new T.CircleGeometry(.0205,24),0,SY,.0885,qGr);
+qp(qZ(.0185,.0185,.045),0,SY,-.04,qBk,H);[-.025,-.04,-.055].forEach(z=>qp(qZ(.0188,.0188,.003),0,SY,z,qAl,H));
+qp(qZ(.0125,.0125,.012),0,.106,-.17,qAl);qp(qZ(.0148,.0148,.03),0,.127,-.17,qBk);[.12,.127,.134].forEach(y=>qp(qZ(.0152,.0152,.0025),0,y,-.17,qAl));qp(qZ(.0125,.0125,.004),0,.1435,-.17,qSt);
+for(let k=0;k<12;k++){const a=k*Math.PI/6;qp(new T.BoxGeometry(.0015,.0012,.004),Math.cos(a)*.0125,.1458,-.17+Math.sin(a)*.0125,qWh)}
+qp(qZ(.0125,.0125,.012),.0195,SY,-.17,qAl,0,H);qp(qZ(.0148,.0148,.03),.0405,SY,-.17,qBk,0,H);qp(qZ(.0125,.0125,.004),.0575,SY,-.17,qSt,0,H);
+qp(qZ(.0125,.0125,.012),-.0195,SY,-.29,qAl,0,H);qp(qZ(.0155,.0155,.026),-.038,SY,-.29,qBk,0,H);qp(qZ(.0155,.0155,.004),-.052,SY,-.29,qSt,0,H);
+qp(new T.CylinderGeometry(.0155,.034,.09,24),0,SY,-.395,qAl,H);qp(new T.CylinderGeometry(.0355,.0355,.075,24,1,true),0,SY,-.4775,qAd,H);
+// folded bipod
+qp(new T.BoxGeometry(.05,.02,.04),0,-.046,-.62,qAl);
+[-1,1].forEach(q=>{qp(new T.CylinderGeometry(.0042,.0042,.24,8),q*.028,-.058,-.74,qSt,H);qp(new T.CylinderGeometry(.0065,.0065,.025,10),q*.028,-.058,-.865,qRb,H)});
 const mf=new T.Sprite(new T.SpriteMaterial({map:new T.CanvasTexture(cv(128,128,g=>{g.translate(64,64);g.fillStyle='#000';g.beginPath();for(let i=0;i<24;i++){const a=i*Math.PI/12,r=i%2?18:60;g.lineTo(Math.cos(a)*r,Math.sin(a)*r)}g.closePath();g.fill();g.fillStyle='#fff';g.beginPath();g.arc(0,0,14,0,7);g.fill()})),transparent:true,depthTest:false,fog:false}));mf.scale.set(.6,.6,1);mf.position.set(0,0,-1.25);mf.visible=false;mf.renderOrder=10;vm.add(mf);const glM=mf.material.clone();glM.depthTest=true;
 vm.position.set(.18,-.2,-.25);C.add(vm);
 const hit=(x,z,r)=>{for(const b of B)if(x>b.x0-r&&x<b.x1+r&&z>b.z0-r&&z<b.z1+r)return 1;return 0};
@@ -418,7 +525,7 @@ function reload(){if(!go||P.rl>0||P.mag>=5||(P.mt?P.ap:P.res)<=0)return;P.rl=2.6
 function dmg(e,d,p,head,bl){P.ht++;if(head)P.hs++;if(e.arm&&!(bl&&bl.ap))d*=e.arm;e.hp-=d;e.al=1;e.fl=1;{const kx=e.g.position.x-P.x,kz=e.g.position.z-P.z,kl=Math.hypot(kx,kz)||1;e.vx=(e.vx||0)+kx/kl*1.8;e.vz=(e.vz||0)+kz/kl*1.8;e.hd=Math.atan2(-kx,-kz)}e.pc=Math.random()<.6;blood(p,head?9:6);sHit();pop(e.hp<=0||head?'HABIS AH!!':['ADOI!','SAKIT DO!'][Math.random()*2|0],p);const h=$('hm');h.style.opacity=1;setTimeout(()=>h.style.opacity=0,150);
 if(e.hp<=0){enemies.splice(enemies.indexOf(e),1);corpses.push({e,t:0});e.gl.visible=false;tense=Math.max(tense,.6);{const dist=bl?bl.o.distanceTo(p):0;if(dist>P.ls)P.ls=dist;if(dist>=250||head&&dist>=120)startKC(e,dist,head)}P.k++;if(M.mode)M.wk++;if(Math.random()<.45)drop(e.g.position.x,e.g.position.z);msg(head?'TEMBAKAN KEPALA!':'MUSUH TUMBANG');setTimeout(()=>sE(70),500)}}
 function hurt(n){P.hp-=n;const hp=$('hp');hp.style.opacity=.25;setTimeout(()=>hp.style.opacity=1,150);tense=1;htFlash();if(ST.vib&&navigator.vibrate)navigator.vibrate(50);if(P.hp<=0&&!P.dead){P.dead=1;go=0;if(P.k>ST.best)ST.best=P.k;sav();KC.t=0;TS=1;$('kc').style.display='none';debrief('GUGUR');$('over').style.display='flex';try{document.exitPointerLock&&document.exitPointerLock()}catch(e){}}}
-function disposeE(e){e.g.traverse(o=>{if(o.geometry&&!o.isSprite)o.geometry.dispose()})}
+function disposeE(e){}
 function pickCover(q){let best=null,bd=70;for(const c of CR){const d=Math.hypot(c[0]-q.x,c[1]-q.z);if(d>6&&d<bd&&Math.hypot(c[0]-P.x,c[1]-P.z)>30){bd=d;best=c}}if(!best)return null;const ux=best[0]-P.x,uz=best[1]-P.z,l=Math.hypot(ux,uz)||1;return[best[0]+ux/l*3,best[1]+uz/l*3]}
 function enemy(e,dt,t,i){const cf=e.cf||CFG.n,q=e.g.position,dx=P.x-q.x,dz=P.z-q.z,d=Math.hypot(dx,dz)||1;
 if(d>330&&e.post===undefined){S.remove(e.g);disposeE(e);enemies.splice(i,1);return}
@@ -502,7 +609,7 @@ if(tx!==undefined){const vx=tx-P.x,vz=tz-P.z;$('oa').style.transform='rotate('+M
 $('sbi').style.width=P.br*100+'%';
 {const g=$('rdr').getContext('2d');g.clearRect(0,0,90,90);g.strokeStyle='#000';g.lineWidth=1;g.beginPath();g.arc(45,45,30,0,7);g.stroke();g.fillStyle='#000';g.beginPath();g.moveTo(45,39);g.lineTo(49,49);g.lineTo(41,49);g.fill();for(const e of enemies){if(!e.al)continue;const dx=e.g.position.x-P.x,dz=e.g.position.z-P.z,sx=(dx*cs-dz*sn)*.12,sy=(dx*sn+dz*cs)*.12;if(Math.hypot(sx,sy)>40)continue;g.beginPath();g.arc(45+sx,45+sy,2.5,0,7);g.fill()}}
 if(P.sc){const d=new T.Vector3();C.getWorldDirection(d);let r='—';for(const e of enemies){const x=e.g.position.x-C.position.x,y=e.g.position.y+1.3-C.position.y,z=e.g.position.z-C.position.z,L=Math.hypot(x,y,z);if((x*d.x+y*d.y+z*d.z)/L>.9995){r=Math.round(L)+' m';break}}$('rg').textContent=r}
-$('am').textContent=(P.rl>0?'ISI PELURU...':P.cy>.6?'BOLT...':(P.mt?'AP ':'STD ')+'\u25cf'.repeat(P.mag)+'\u25cb'.repeat(5-P.mag))+' \u00b7 '+P.res+' / AP '+P.ap;$('bt').textContent=P.sel?'AP':'STD';$('bt').classList.toggle('on',!!P.sel);$('br').classList.toggle('pls',P.mag<=1&&(P.mt?P.ap:P.res)>0&&P.rl<=0)}}
+$('am').textContent=(P.rl>0?'ISI PELURU...':P.cy>.6?'BOLT...':(P.mt?'TEMBUS ':'BIASA ')+'\u25cf'.repeat(P.mag)+'\u25cb'.repeat(5-P.mag))+' \u00b7 '+P.res+' / AP '+P.ap;$('bt').textContent=P.sel?'TEMBUS':'BIASA';$('bt').classList.toggle('on',!!P.sel);$('br').classList.toggle('pls',P.mag<=1&&(P.mt?P.ap:P.res)>0&&P.rl<=0)}}
 function cam(){const bf=Math.min(1,(P.spd||0)/4)*(P.sc?.15:1),bb=Math.abs(Math.sin(bob))*.05*bf*(P.rn?1.35:1),bs=Math.sin(bob)*.022*bf;C.position.set(P.x+Math.cos(P.yaw)*bs,1.7-.65*cro+P.gy+bb-(P.dip||0),P.z-Math.sin(P.yaw)*bs);C.rotation.set(P.pitch+swy,P.yaw+swx,(P.roll||0)+Math.sin(bob)*.004*bf);sk.position.copy(C.position);const tm=performance.now()/1000,dt2=Math.min(.1,tm-(cam.l||tm));cam.l=tm;skNew.uniforms.uT.value=tm;skNew.uniforms.uPR.value=R.getPixelRatio();if(HF.t>=0){HF.t+=dt2;const u=HF.t/14;if(u>1){HF.t=-1;HV.visible=false}else{HV.visible=true;HV.position.set(HF.x0+660*u,95+Math.sin(u*6)*4,HF.z0+80*u);HV.rotation.y=Math.PI/2-.12;HRot.rotation.y+=dt2*30}}
 if(BLAST.t>0){BLAST.t-=dt2;const u=1-BLAST.t/3.6;BW.visible=BR.visible=true;BW.scale.setScalar(5+u*430);BW.material.opacity=.55*(1-u)*(1-u);BR.scale.setScalar(5+u*430);BR.material.opacity=.8*(1-u);const k=Math.min(1,BLAST.t)*.3;C.position.x+=rnd(-k,k);C.position.y+=rnd(-k,k);if(BLAST.t<=0)BW.visible=BR.visible=false}SUN.position.set(C.position.x+Math.sin(2.4)*Math.cos(.5)*430,C.position.y+Math.sin(.5)*430,C.position.z+Math.cos(2.4)*Math.cos(.5)*430);
 for(let i=0;i<450;i+=3){ap[i]+=dt2*Wx*.6;ap[i+2]+=dt2*Wz*.6;ap[i+1]-=dt2*.7;if(ap[i+1]<C.position.y-2)ap[i+1]+=25;if(ap[i+1]>C.position.y+23)ap[i+1]-=25;ap[i]=C.position.x+((ap[i]-C.position.x+40)%80+80)%80-40;ap[i+2]=C.position.z+((ap[i+2]-C.position.z+40)%80+80)%80-40}AS.geometry.attributes.position.needsUpdate=true;
